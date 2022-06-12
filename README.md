@@ -1,41 +1,99 @@
 # Myrag
 
 ## Introduction
-
+My rag is a custom headwrap website where customers can sort through options to pick and purchase a personalised headwrap based on color, material, style and custom message.
 
 
 # UX
 
-## External User Goal
+## Site Owner Goal
+Make a profit through the sale of headwraps using this website.
 
+## External User Goal
+Find out more information about these custom headwraps and make a purchase.
 
 ## User Stories
 
+### View & Navigation
+![Desktop View](documentation/epics/view-navigation-us.png)
 
+### Registration & User Accounts
+![Desktop View](documentation/epics/registration-useraccounts-us.png)
 
-## Site Owner Goal
+### Customisation
+![Desktop View](documentation/epics/customisation-us.png)
 
-- 
+### Purchasing & Ceckout
+![Desktop View](documentation/epics/purchasing-checkout-us.png)
+ 
 
-#### Placeholder
-
-![Desktop View](documentation/wireframes/)
-![Mobile View](documentation/wireframes/)
-
-#### Placeholder
-
-![Desktop View](documentation/wireframes/)
-![Mobile View](documentation/wireframes/)
-
-#### Placeholder
+#### Main Page
 
 ![Desktop View](documentation/wireframes/)
-![Mobile View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/main.png)
 
-#### Placeholder
+#### Colour Customisation
 
 ![Desktop View](documentation/wireframes/)
-![Mobile View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/color-custom.png)
+
+#### Material Customisation
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/material-custom.png)
+
+#### Custom Message
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/message-custom.png)
+ 
+#### Gallery
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/gallery.png)
+ 
+#### FAQ & Delivery
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/faq-delivery.png)
+ 
+#### Register
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/register.png)
+ 
+#### Sign in
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/sign-in.png)
+ 
+#### Profile Information & Card Details
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/profile.png)
+ 
+#### Order History
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/order-history.png)
+ 
+#### Customer Reviews
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/see-reviews.png)
+![Mobile View](documentation/wireframes/write-reviews.png)
+ 
+#### Order List
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/order-list.png)
+ 
+#### Upload to gallery
+
+![Desktop View](documentation/wireframes/)
+![Mobile View](documentation/wireframes/gallery-upload.png)
+ 
+
 
 
 ## Technologies Used
@@ -46,7 +104,6 @@
 - Python3 is used for the main code logic.
 - [Django](https://www.djangoproject.com/) was used as the framework
 - PostgreSQL
-- 
 - [Heroku](https://heroku.com/) was used for live deployment.
 - [ShareX](https://getsharex.com/) for capturing screenshots.
 
