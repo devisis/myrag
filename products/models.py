@@ -1,20 +1,27 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
-material_choices = (
-    ("Silk"), ("Velvet"), ("Satin"),
-)
-
-color_choices = (
-    ("Red"), ("Green"), ("Blue"),
-)
 
 
 class Product(models.Model):
     """Model for Product"""
+    material_choices = (
+    ("Sil", "Silk"),
+    ("Vel", "Velvet"),
+    ("Sat", "Satin"),
+    )
+
+    color_choices = (
+    ("R","Red"),
+    ("G", "Green"),
+    ("B", "Blue"),
+    )
+
     name = models.CharField(max_length=50)
-    material = models.CharField(choices=material_choices, default="Silk")
-    color = models.CharField(choices=color_choices, default="Red")
+    material = models.CharField(max_length=50, choices=material_choices, default="Silk")
+    primary_color = models.CharField(max_length=50, choices=color_choices, default="Red")
+    secondary_color = models.CharField(max_length=50, choices=color_choices, blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=6)
     image = models.ImageField(null=True)
