@@ -1,0 +1,21 @@
+body {
+    background: url('/media/bandana-myrag.jpg') no-repeat center center fixed;
+    background-color: #242423;
+    background-size: cover;
+    color: white;
+}
+
+html {
+    height: 100%;
+}
+
+
+/* Main Page */
+
+.nav-link {
+    color: white;
+}
+
+.nav-item {
+    padding: 0 2rem 0 2rem;
+}

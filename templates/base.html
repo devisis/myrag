@@ -15,9 +15,11 @@
 
     {% block corecss %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
     {% endblock %}
     
     {% block extracss %}
+    <link rel="stylesheet" href="static/css/base.css">
     {% endblock %}
     
     {% block corejs %}
@@ -26,12 +28,84 @@
     {% endblock %}
     
     {% block extrajs %}
+    <script src="https://kit.fontawesome.com/111412ee7e.js" crossorigin="anonymous"></script>
     {% endblock %}
 
     <title>Myrag {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top"></header>
+    <header >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand text-danger" href="{% url 'home' %}">Myrag</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menu navigation toggle">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" aria-label="The contact page">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" aria-label="The contact page">Shop</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" aria-label="The delivery page">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" aria-label="The delivery page">Delivery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" aria-label="The FAQ page">FAQ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      My Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarMenu">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a href="#" class="dropdown-item">Site Orders</a>
+                        {% endif %}
+                        <a href="#" class="dropdown-item" aria-label="The profile page">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
+                    {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
+                    {% endif %}
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <i class="fa-solid fa-basket-shopping">
+                      
+                    </i>
+                    <!-- <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
+                            <div></div>
+                            <p class="my-0">
+                                {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    Bah
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a> -->
+                </li>
+              </ul>
+            </div>
+          </nav>
+ 
+              
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div id="delivery-banner" class="row text-center">
+        <div class="col bg-black text-white">
+            <h4 class="logo-font my-1">Free delivery on Torders over ${{ free_delivery_threshold }}!</h4>                
+        </div>            
+    </div> -->
+    </header>
     
     {% if messages %}
         <div class="message-container"></div>
