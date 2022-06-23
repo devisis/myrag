@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from .models import Product
 
-class ViewProducts():
+class view_product():
 
 
-class AddProduct():
+class add_product():
     def get()
     def post()
