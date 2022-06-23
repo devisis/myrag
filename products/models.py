@@ -1,17 +1,26 @@
 from django.db import models
 
 
+material_choices = (
+    ("Silk"), ("Velvet"), ("Satin"),
+)
+
+color_choices = (
+    ("Red"), ("Green"), ("Blue"),
+)
+
+
 class Product(models.Model):
     """Model for Product"""
-    id = models.AutoField()
-    name = models.CharField(max_length=)
-    material = models.Field.choices()
-    color = models.CharField()
-    description = models.TextField()
+    name = models.CharField(max_length=50)
+    material = models.CharField(choices=material_choices, default="Silk")
+    color = models.CharField(choices=color_choices, default="Red")
+    description = models.TextField(blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=6)
-    image = models.ImageField()
+    image = models.ImageField(null=True)
 
     def __str__(self):
+        return self.name
 
 class Review(models.Model):
     """Model for Reviews"""
