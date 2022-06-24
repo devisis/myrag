@@ -8,3 +8,6 @@ def view_product(request):
     View to show all products
     """
     products = Product.objects.all()
+
+    if request.GET:
+        return render(request, 'products/all_rags.html')

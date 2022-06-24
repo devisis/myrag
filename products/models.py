@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 
 class Product(models.Model):
     """Model for Product"""
+    category = models.ForeignKey('Category', blank=True, null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=200)
     style = models.CharField(max_length=200)
     material = models.CharField(max_length=200)
@@ -14,6 +15,19 @@ class Product(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=200, unique=True, editable=False)
     description = models.TextField()
+    
 
     def __str__(self):
         return self.name
+
+
+class Category(models.Model):
+    """Model for Category"""
+    name = models.CharField(max_length=200)
+    friendly_name = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
