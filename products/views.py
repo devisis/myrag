@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from .models import Product
 
-class view_product(request):
-    
 
-class add_product():
-    def get()
-    def post()
+def view_product(request):
+    """
+    View to show all products
+    """
+    products = Product.objects.all()
