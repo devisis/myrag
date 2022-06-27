@@ -1,41 +1,43 @@
 <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navMenu">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#" aria-label="The contact page">Home</a>
+      <a class="nav-link" href="{% url 'home' %}" aria-label="The contact page">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{% url 'durags' %}" aria-label="The contact page">Durags</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" aria-label="The delivery page">Contact</a>
+      <a class="nav-link" href="#" aria-label="The contact page">Contact</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" aria-label="The delivery page">Delivery</a>
+      <a class="nav-link" href="#" aria-label="The newsletter page">Newsletter</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#" aria-label="The FAQ page">FAQ</a>
     </li>
     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      My Account
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarMenu">
-      {% if request.user.is_authenticated %}
-      {% if request.user.is_superuser %}
-      <a href="#" class="dropdown-item">Site Orders</a>
-      {% endif %}
-      <a href="#" class="dropdown-item" aria-label="The profile page">My Profile</a>
-      <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
-      {% else %}
-      <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
-      <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
-      {% endif %}
-    </div>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        My Account
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarMenu">
+        {% if request.user.is_authenticated %}
+
+          {% if request.user.is_superuser %}
+            <a href="#" class="dropdown-item">Site Orders</a>
+          {% endif %}
+          <a href="#" class="dropdown-item" aria-label="The profile page">My Profile</a>
+          <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
+        {% else %}
+          <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
+          <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
+        {% endif %}
+      </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'basket' %}" aria-label="The basket page"><i
-          class="fa-solid fa-basket-shopping">Basket</i></a>
+      <a class="nav-link" href="{% url 'basket' %}" aria-label="The basket page">Basket
+        <i class="fas fa-shopping-basket"></i>
+      </a>
     </li>
   </ul>
 </div>

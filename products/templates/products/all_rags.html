@@ -6,13 +6,6 @@
 {% endblock %}
 
 {% block page_header %}
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>.</h1>
-    </div>
-  </div>
-</div>
 
 {% endblock %}
 
@@ -28,14 +21,14 @@
   <div class="row d-flex justify-content-center">
     {% for product in products %}
     <div class="card m-1" style="width: 18rem;">
-      <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+      <img src="{{ product.featured_image.url }}" class="card-img-top" alt="{{ product.name }}">
       <div class="card-body">
         <h5 class="card-title"> {{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
         <p class="card-text">{{ product.price }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="{% url 'add_to_basket' product.id %}" class="btn btn-primary">Add to basket</a>
       </div>
-    </div>
+    </div> 
     {% endfor %}
   </div>
 </div>

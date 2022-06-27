@@ -21,7 +21,7 @@
   {% endblock %}
 
   {% block extracss %}
-  <link rel="stylesheet" href="static/css/base.css">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 
   {% block corejs %}
@@ -41,8 +41,8 @@
 </head>
 
 <body>
-  <header class="container">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <header class="container-fluid w-100 p-0">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand text-danger" href="{% url 'home' %}">Myrag</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu"
         aria-expanded="false" aria-label="Menu navigation toggle">
@@ -52,9 +52,24 @@
     </nav>
   </header>
 
+  <!-- {% if messages %}
+  <div class="message-container">
+    {% for message in messages %}
+    <span class="text-white">{{ message }}</span>
+      
+    {% endfor %}
+  </div>
+  {% endif %} -->
   {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
+  <section id="alerts">
+      {% for msg in messages %}
+          <!-- all django message tags mirror bootstrap, except error/danger -->
+          <aside class="alert {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} text-center" role="alert">
+              <h3>{{ msg }}</h3>
+          </aside>
+      {% endfor %}
+  </section>
+{% endif %}
 
   {% block page_header %}
   {% endblock %}
