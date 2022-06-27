@@ -9,5 +9,8 @@ def view_product(request):
     """
     products = Product.objects.all()
 
-    if request.GET:
-        return render(request, 'products/all_rags.html')
+    context = {
+        'products': products,
+    }
+
+    return render(request, 'products/all_rags.html', context)
