@@ -4,13 +4,22 @@
 My rag is a custom headwrap website where customers can sort through options to pick and purchase a personalised headwrap based on color, material, style and custom message.
 
 
-# UX
+## UX
 
 ## Site Owner Goal
 Make a profit through the sale of headwraps using this website.
 
 ## External User Goal
 Find out more information about these custom headwraps and make a purchase.
+
+## Business Model
+### Entity Relationship Diagram
+### CRUD Functionality
+admin faq product
+### SEO & Marketing
+#### FB Mockup
+#### Sitemap & Robots
+
 
 ## User Stories
 
@@ -94,7 +103,10 @@ Find out more information about these custom headwraps and make a purchase.
 ![Mobile View](documentation/wireframes/gallery-upload.png)
  
 
+## Features 
+projects issues ss
 
+### Future Features
 
 ## Technologies Used
 
@@ -109,9 +121,10 @@ Find out more information about these custom headwraps and make a purchase.
 
 ## Testing
 
-<!-- To view all testing documentation please refer to [TESTING.md](TESTING.md) -->
+To view all testing documentation please refer to [TESTING.md](TESTING.md)
 
-### Deployment
+## Deployment
+cloudinary - stripe 
 
 The site was deployed using [Heroku](https://heroku.com/). The app can be found using this link - [Myrag](https://myrag.herokuapp.com/).
 
@@ -121,7 +134,7 @@ The steps are as follows:
 - From the Dashboard click "New" then "Create New App".
 - Enter a project name (unique), select a region then press "Create app".
 - This will create an app and open the deploy tab. From here select the "Settings" tab.
-- Set your Environment Variables by navigating to Reveal Config Vars.
+- Set your Environment Variables by navigating to Reveal Config Vars. (mention which config vars just the keys no values and env files)
 Scroll up and head to the "Deploy" section to choose deployment method. Select "GitHub" and in the "connect to GitHub" section link your GitHub account.
 - Scroll down to the manual deploy option and select "Deploy Branch".
 - The app will now be built. Once completed a 'Your App Was Successfully Deployed' message and a link will appear.
@@ -145,6 +158,11 @@ Additionally, Heroku will require a `Procfile`, so you can type:
 
 - `echo web: node index.js > Procfile`
 
-### Acknowledgements
+## Credits
+links - inspiration - 
+
+## Acknowledgements
 
 - Thank you to my mentor for help and support.
+
+
