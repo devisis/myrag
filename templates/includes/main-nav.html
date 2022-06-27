@@ -1,0 +1,53 @@
+<div class="collapse navbar-collapse d-md-flex justify-content-center" id="navMenu">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#" aria-label="The contact page">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'view_product' %}" aria-label="The contact page">Shop Durags</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" aria-label="The delivery page">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" aria-label="The delivery page">Delivery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" aria-label="The FAQ page">FAQ</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        My Account
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarMenu">
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="#" class="dropdown-item">Site Orders</a>
+        {% endif %}
+        <a href="#" class="dropdown-item" aria-label="The profile page">My Profile</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
+        <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
+        {% endif %}
+      </div>
+    </li>
+    <li class="nav-item">
+      <i class="fa-solid fa-basket-shopping">
+
+      </i>
+      <!-- <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
+                      <div></div>
+                      <p class="my-0">
+                          {% if grand_total %}
+                              ${{ grand_total|floatformat:2 }}
+                          {% else %}
+                              Bah
+                          {% endif %}
+                      </p>
+                  </div>
+              </a> -->
+    </li>
+  </ul>
+</div>
