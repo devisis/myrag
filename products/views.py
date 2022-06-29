@@ -18,17 +18,19 @@ def view_product(request):
 
 
 def add_to_basket(request, id):
-    qauntity = request.POST.get('quantity')
+    """ Add durag of a certain quantity to bag """
+
+    quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {})
 
     if id in list(basket.keys()):
-        basket[id] += qauntity
+        basket[id] += quantity
     else:
-        basket[id] = qauntity
+        basket[id] = quantity
 
     request.session['basket'] = basket
     print(request.session['basket'])
+    print("Quantity in add_to_basket:", quantity)
+    print(type(quantity))
     messages.success(request, "test success")
     return redirect(view_product)
-
-    
