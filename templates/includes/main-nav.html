@@ -3,8 +3,23 @@
     <li class="nav-item">
       <a class="nav-link" href="{% url 'home' %}" aria-label="The contact page">Home</a>
     </li>
+    {% if request.user.is_superuser %}
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Durags
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarMenu">
+        <a class="nav-link" href="{% url 'durags' %}" aria-label="View all durags">All Durags</a>
+        <a href="{% url 'create_product' %}" class="dropdown-item">Manage Durags</a>
+      </div>
+    </li>
+    {% else %}
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'durags' %}" aria-label="The contact page">Durags</a>
+      <a class="nav-link" href="{% url 'durags' %}" aria-label="View all durags">Durags</a>
+    </li>
+    {% endif %}
+    <li class="nav-item">
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#" aria-label="The contact page">Contact</a>
@@ -22,15 +37,15 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarMenu">
         {% if request.user.is_authenticated %}
+        <a href="#" class="dropdown-item" aria-label="The profile page">My Profile</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
 
           {% if request.user.is_superuser %}
-            <a href="#" class="dropdown-item">Site Orders</a>
+        <a href="#" class="dropdown-item">Pending Orders</a>
           {% endif %}
-          <a href="#" class="dropdown-item" aria-label="The profile page">My Profile</a>
-          <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
         {% else %}
-          <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
-          <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
+        <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
+        <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
         {% endif %}
       </div>
     </li>
