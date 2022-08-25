@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import View
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Product
+from .forms import AddProductForm
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.models import User
 
 
 def view_product(request):
@@ -17,20 +21,16 @@ def view_product(request):
     return render(request, 'products/all_rags.html', context)
 
 
-def add_to_basket(request, id):
-    """ Add durag of a certain quantity to bag """
+class AddProductView(SuccessMessageMixin, CreateView):
 
-    quantity = int(request.POST.get('quantity'))
-    basket = request.session.get('basket', {})
+    model = Product
+    form_class = AddProductForm
+    template_name = 'product_create_form.html'
+    success_url = '/products/create/'
+    success_message = 'Product created!'
 
-    if id in list(basket.keys()):
-        basket[id] += quantity
-    else:
-        basket[id] = quantity
+    # Ensure form is valid before saving it
 
-    request.session['basket'] = basket
-    print(request.session['basket'])
-    print("Quantity in add_to_basket:", quantity)
-    print(type(quantity))
-    messages.success(request, "test success")
-    return redirect(view_product)
+    def form_valid(self, form):
+        self.object = form.save()
+        return super().form_valid(form)
