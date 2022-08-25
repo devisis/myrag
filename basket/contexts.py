@@ -13,20 +13,18 @@ def basket_items(request):
 
     for durag_id, quantity in basket.items():
         durag = get_object_or_404(Product, pk=durag_id)
+        total += quantity * durag.price
         durag_count += quantity
-        total += durag_count * durag.price
         basket_durags.append({
             'durag_id': durag_id,
             'quantity': quantity,
             'durag': durag,
-            'durag_count': durag_count,
         })
 
     context = {
         'basket_durags': basket_durags,
         'total': total,
         'durag_count': durag_count,
-        'basket': basket,
     }
 
     return context
