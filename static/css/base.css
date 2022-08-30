@@ -45,7 +45,7 @@ html {
     font-size: 200%;
 }
 
-/* Product Page */
+/* All Durags Page */
 
 .card {
     background-color: rgba(255, 255, 214, 0.3);
@@ -54,6 +54,13 @@ html {
 
 input[type=number]{
     -moz-appearance: textfield;
+}
+
+/* Basket Page */
+
+.bsk-link {
+    font-size: 0.7rem;
+    cursor: pointer;
 }
 
 /* remove input arrows  */
