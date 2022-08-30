@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block page_header %}
 
@@ -56,7 +57,7 @@
               <td>
               </td>
               <td>
-                <p>£{{ durag_info.durag.price }}</p>
+                <p>£{{ durag_info.durag.price | calc_sub:durag_info.quantity }}</p>
               </td>
             </tr>
             {% endfor %}
