@@ -17,12 +17,14 @@
   <div class="row">
     <div class="col d-flex justify-content-center">
       {% if basket_durags %}
+      <!-- create table to house durags added to basket -->
       <div class="col-8 table-responsive rounded">
         {{ basket_durags }}
-        <table class="table table-striped table-light">
-          <thead>
+        <table class="table table-striped table-dark">
+          <thead class="thead-dark">
             <tr>
-              <th scope="col">Durag</th>
+              <th scope="col">Durag Details</th>
+              <th scope="col"></th>
               <th scope="col"></th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
@@ -34,16 +36,48 @@
             <!-- for each item in basket to fill out table -->
             {% for durag_id in basket_durags %}
             <tr>
-              <td><img class="img-thumbnail img-fluid" src="{{ durag_id.durag.featured_image.url }}"
-                  alt="{{ durag_id.product.name }}"></td>
               <td>
+                <img class="img-thumbnail img-fluid" src="{{ durag_id.durag.featured_image.url }}" max-width="3%"
+                  alt="{{ durag_id.product.name }}">
+              </td>
+              <td>
+                <!-- name of durag -->
                 <p>{{ durag_id.durag.name }}</p>
               </td>
               <td>
+              </td>
+              <td>
+                <!-- durag price -->
                 <p>£{{ durag_id.durag.price }}</p>
               </td>
               <td>
-                <p>{{ durag_id.quantity }}</p>
+
+                <form class="form update-form" action="" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <div class="input-group input-group-{{ durag.durag_id }}">
+                      <div class="input-group-prepend">
+                        <!-- lower the quantity -->
+                        <button class="down-qty btn" data-durag_id="{{ durag.durag_id }}"
+                          id="down-qty_{{ durag.durag_id }}">
+                          <i class="fas fa-minus fa-sm"></i>
+                        </button>
+                        <!-- display quantity  -->
+                        <input class="form-control form-control-sm qty_input" type="number"
+                        name="quantity" value="{{ durag_id.quantity }}" min="1" max="99"
+                        data-durag_id="{{ durag.durag_id }}"
+                        id="id_qty_{{ durag.durag_id }}">
+                        <!-- raise quantity -->
+                        <button class="up-qty btn" data-durag_id="{{ durag.durag_id }}"
+                          id="up-qty_{{ durag.durag_id }}">
+                          <i class="fas fa-plus fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <a href="" class="update-basket">Update</a>
+                <a href="" class="delete-basket">Delete</a>
               </td>
               <td>
               </td>
@@ -52,17 +86,24 @@
               </td>
             </tr>
             {% endfor %}
+            <tr>
+              <td colspan="7">Total Price: £ {{ total }}</td>
+            </tr>
           </tbody>
+
+          <tr>
+            <td colspan="7">
+              <a href="{% url 'durags' %}" class="btn btn-info mr-4">
+                Keep Looking
+              </a>
+              <a href="{% url 'durags' %}" class="btn btn-success ml-4 ">
+                Secure Checkout
+              </a>
+
+            </td>
+          </tr>
         </table>
-        <h4 class="text-center">Total Price: £ {{ total }}</h4>
-      
-      <a href="{% url 'durags' %}" class="btn btn-info">
-      Keep Looking
-      </a>
-      <a href="{% url 'durags' %}" class="btn btn-success">
-      Secure Checkout
-      </a>
-    </div>
+      </div>
       {% else %}
 
       <p class="bold lead">Your shopping basket is <strong>empty</strong>.</strong></p>
@@ -76,4 +117,9 @@
       <!-- endif -->
     </div>
   </div>
+  {% endblock %}
+
+  {% block postloadjs %}
+  {{ block.super }}
+  {% include 'includes/quantity_input_script.html' %}
   {% endblock %}

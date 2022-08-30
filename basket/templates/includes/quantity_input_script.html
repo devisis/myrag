@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    function handleEnableDisable(duragId) {
+        var currentValue = parseInt($(`#id_qty_${duragId}`).val());
+        var plusDisabled = currentValue > 98;
+        var minusDisabled = currentValue < 2;
+        $(`#up-qty_${duragId}`).prop('disabled', plusDisabled);
+        $(`#down-qty_${duragId}`).prop('disabled', minusDisabled);
+
+    }
+
+    // Enabling and disabling of all inputs
+    var allQtyInputs = $('.qty_input');
+    for (var i = 0; i < allQtyInputs.length; i++) {
+        var duragId = $(allQtyInputs[i]).data('durag_id');
+        handleEnableDisable(duragId);
+    }
+
+    // up quantity
+    $('.up-qty').click(function(e) {
+        e.preventDefault();
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue + 1);
+        var duragId = $(this).data('durag_id');
+        handleEnableDisable(duragId);
+    });
+
+    // down quantity
+    $('.down-qty').click(function(e) {
+        e.preventDefault();
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue - 1);
+        var duragId = $(this).data('durag_id');
+        handleEnableDisable(duragId);
+    });
+</script>
