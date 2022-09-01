@@ -92,6 +92,16 @@ input::-webkit-inner-spin-button {
     overflow: visible;
 }
 
+.toast p {
+    color:black;
+}
+
 .toast-status-bar {
     height: 3px;
+}
+
+.basket-display-toast {
+    height: 75px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
