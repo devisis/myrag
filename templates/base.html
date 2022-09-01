@@ -52,12 +52,19 @@
   </header>
 
   {% if messages %}
-  <section id="alerts">
+  <section class= "toast-container" id="alerts">
       {% for msg in messages %}
-          <!-- all django message tags mirror bootstrap, except error/danger -->
-          <aside class="alert {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} text-center" role="alert">
-              <h3>{{ msg }}</h3>
-          </aside>
+        {% with msg.level as level %}
+          {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+          {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+          {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+          {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+          {% endif %}
+        {% endwith %}
       {% endfor %}
   </section>
 {% endif %}
@@ -69,6 +76,9 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
   {% endblock %}
 
 </body>

@@ -18,6 +18,8 @@ html {
     height: 100%;
 }
 
+
+
 /* Navbar */
 
 .navbar-dark .navbar-nav .nav-link {
@@ -76,4 +78,20 @@ input::-webkit-inner-spin-button {
 
 .table{
 	text-align:center
+}
+
+/* toasts */
+.toast-container {
+    z-index: 999999999999;
+    position: fixed;
+    top: 56px; 
+    right: 5px;
+}
+
+.toast {
+    overflow: visible;
+}
+
+.toast-status-bar {
+    height: 3px;
 }

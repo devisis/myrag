@@ -2,6 +2,7 @@ from django.shortcuts import (
     render, redirect, get_object_or_404, reverse, HttpResponse
 )
 from django.contrib import messages
+
 from products.views import view_product
 from products.models import Product
 
@@ -26,13 +27,7 @@ def add_to_basket(request, durag_id):
         basket[durag_id] = quantity
 
     request.session['basket'] = basket
-    print('if ', durag_id)
-    print('is in > list basket keys', list(basket.keys()))
-    print('this many > quaintity', quantity)
-    print('plus this many // else equal to this many > basket id', basket[durag_id])
-    print('request basket session', request.session['basket'])
-
-    messages.success(request, f'Added {quantity} {durag.name}')
+    messages.success(request, f'Added {quantity} of the {durag.name} to your basket')
     return redirect(view_basket)
 
 
