@@ -18,10 +18,13 @@ class Product(models.Model):
         ("Bandana", "Bandana"),
     )
 
-    category = models.ForeignKey('Category', blank=True, null=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', blank=True, null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=200)
-    style = models.CharField(max_length=200, choices=STYLE_CHOICES, default="Default")
-    material = models.CharField(max_length=200, choices=MATERIAL_CHOICES, default="Silk")
+    style = models.CharField(
+        max_length=200, choices=STYLE_CHOICES, default="Default")
+    material = models.CharField(
+        max_length=200, choices=MATERIAL_CHOICES, default="Silk")
     color = models.CharField(max_length=200)
     price = models.DecimalField(decimal_places=2, max_digits=6)
     featured_image = CloudinaryField('image', default='placeholder')

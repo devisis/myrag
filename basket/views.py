@@ -27,7 +27,8 @@ def add_to_basket(request, durag_id):
         basket[durag_id] = quantity
 
     request.session['basket'] = basket
-    messages.success(request, f'Added {quantity} of the {durag.name} to your basket')
+    messages.success(
+        request, f'Added {quantity} of the {durag.name} to your basket')
     return redirect(view_product)
 
 

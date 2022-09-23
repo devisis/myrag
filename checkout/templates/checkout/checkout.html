@@ -98,7 +98,6 @@
         <a href="{% url 'basket' %}" class="btn">Edit Basket</a>
     </div>
 </div>
-</div>
 <div>
     <button id="submit-btn" class="btn btn-danger">Make Order</button>
     <p><span>Your card will be billed <strong>£{{ total|floatformat:2 }}</strong></span></p>
@@ -108,6 +107,8 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    {{ stripe_public_key|json }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}|
+    {{ client_secret|json_script:"id_client_secret" }}
+
 {% endblock %}
 
