@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+{% load basket_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Checkout -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2>Checkout Form</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- order-lg-last -->
+            <div class="row">
+                <div class="col-4 checkout-rag-img">
+                    <p>img</p>
+                </div>
+                <div class="col-4">
+                    <p>Durag Information</p>
+                </div>
+
+                <div class="col-4 text-right">
+                    <p>Subtotal</p>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for durag_info in basket_durags %}
+                <div class="col-4 d-flex">
+                    {% if durag_info.product.featured_image %}
+                    <img src="{{ durag_info.durag.featured_image.url }}" alt="{{ durag_info.durag.name }}">
+                    {% else %}
+                    <img src="#" alt="{{ durag_info.durag.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-4">
+                    <p class="m-0">{{ durag_info.durag.name }}</p>
+                    <p class="m-0">Quantity: {{ durag_info.quantity }}</p>
+                </div>
+
+                <div class="col-4 m-0 text-right py-5">
+                    <p>£ {{ durag_info.durag.price|calc_sub:durag_info.quantity }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div>
+                <p class="my-0"><strong>Order Total: £{{ total | floatformat:2 }}</strong></p>
+            </div>
+        </div>
+
+        <hr>
+        <div class="col-md-6">
+            <div class="row my-2 pl-3">
+                <p>Please fill out the checkout form to purchase durags</p>
+                <form action="{% url 'checkout' %}" id="payment-form" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-details">
+                        <legend class="fieldset-labdel text-danger">Details</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="form-delivery">
+                        <legend class="fieldset-title text-danger">Delivery</legend>
+                        {{ order_form.street_1 | as_crispy_field }}
+                        {{ order_form.street_2 | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        <div class="float-right">
+                            <label class="save-delivery text-danger" for="save-delivery">Save your delivery information to
+                                profile</label>
+                            <input type="checkbox" name="save-delivery" id="save-delivery" checked>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-payment">
+                        <legend class="fieldset-title text-danger">Payment</legend>
+                        <div class="" id="card-details">
+
+                        </div>
+                        <div class="text-danger" id="card-errors" role="alert">
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="submit-btn">
+        <a href="{% url 'basket' %}" class="btn">Edit Basket</a>
+    </div>
+</div>
+</div>
+<div>
+    <button id="submit-btn" class="btn btn-danger">Make Order</button>
+    <p><span>Your card will be billed <strong>£{{ total|floatformat:2 }}</strong></span></p>
+
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json }}
+{% endblock %}
+
