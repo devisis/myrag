@@ -5,7 +5,8 @@ if os.path.exists("env.py"):
     import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get("SECRET_KEY")
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 DEBUG = os.environ.get("DEBUG")
 
 ALLOWED_HOSTS = ["myrag.herokuapp.com", "localhost"]
@@ -19,10 +20,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'crispy_forms',
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -31,9 +33,11 @@ INSTALLED_APPS = [
     'basket',
     'checkout',
 
-    # Other
-    'crispy_forms',
 ]
+
+SITE_ID = 1
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -47,12 +51,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myrag.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            TEMPLATES_DIR,
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, "templates", "allauth"),
             ],
@@ -83,8 +87,6 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-SITE_ID = 1
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
@@ -97,15 +99,6 @@ LOGIN_REDIRECT_URL = '/success'
 
 WSGI_APPLICATION = 'myrag.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 if "DATABASE_URL" in os.environ:
     print("database = PostgreSQL via Heroku")
     DATABASES = {
@@ -167,6 +160,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
+
+# STRIPE
+
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
