@@ -16,20 +16,20 @@ class OrderForm(forms.ModelForm):
         Set placeholders, class and autofocus to first field of form
         """
         super().__init__(*args, **kwargs)
-        # placeholders = {
-        #     'full_name': 'Full Name',
-        #     'email': 'Email Address',
-        #     'street_1': 'Street Address 1',
-        #     'street_2': 'Street Address 2',
-        #     'county': 'County',
-        #     'postcode': 'Postcode',
-        # }
+        placeholders = {
+            'full_name': 'Full Name',
+            'email': 'Email Address',
+            'street_1': 'Street Address 1',
+            'street_2': 'Street Address 2',
+            'county': 'County',
+            'postcode': 'Postcode',
+        }
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            new_data = {
-                'placeholder': str(field),
-                'class': 'form-control'
-            }
-            self.fields[str(field)].widget.attrs.update(
-                new_data
-            )
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False

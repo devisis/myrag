@@ -1,17 +1,17 @@
 /* General Styling */
 
 body {
-    background-color: #242423;
+    background-color: #12232E;
     background-size: cover;
 }
 
 h1, h2, h3, h4, h5, a{
- color: #FFD700;
+ color: #EEFBFB;
  text-decoration: solid;
 }
 
 p {
-    color: #d39e00;
+    color: #EEFBFB;
 }
 
 html {
@@ -22,16 +22,21 @@ html {
 
 /* Navbar */
 
+.navbar-brand{
+    color: #007CC7;
+}
+
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 215, 0.9);
+    color: #EEFBFB;
+    
 }
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #203647;
 }
 
 .navbar-toggler {
-    background-color: #B60000;
+    background-color: #007CC7;
 }
 
 /* Main Page */
@@ -50,7 +55,7 @@ html {
 /* All Durags Page */
 
 .card {
-    background-color: rgba(255, 255, 214, 0.3);
+    background-color: rgb(32, 54, 71, 0.3);
 
 }
 
