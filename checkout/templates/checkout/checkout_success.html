@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Checkout -->
+<div class="overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="test">Thanks for your custom!</h2>
+                <hr>
+                <p>Your order information is detailed below and a confirmation will be sent to your email</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6">
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

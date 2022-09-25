@@ -13,7 +13,7 @@ class Order(models.Model):
     full_name = models.CharField(max_length=120, null=False, blank=False)
     email = models.EmailField(max_length=320, null=False, blank=False)
     street_1 = models.CharField(max_length=150, null=False, blank=False)
-    street_2 = models.CharField(max_length=150, null=False, blank=False)
+    street_2 = models.CharField(max_length=150, null=True, blank=True)
     county = models.CharField(max_length=80, null=False, blank=False)
     postcode = models.CharField(max_length=15, null=False, blank=False)
     total = models.DecimalField(
@@ -33,7 +33,7 @@ class Order(models.Model):
         update total each time a new item is added
         """
         self.total = self.lineitems.aggregate(
-            Sum('lineitem_total'))['lineitem_total__sum']
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -47,7 +47,8 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
-        Order, on_delete=models.CASCADE, null=False, blank=False)
+        Order, on_delete=models.CASCADE, null=False, blank=False, 
+        related_name='lineitems')
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, null=False, blank=False)
     quantity = models.IntegerField(default=0, null=False, blank=False)
