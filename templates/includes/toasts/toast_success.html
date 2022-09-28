@@ -11,7 +11,7 @@
       <div class="col">{{ msg }}</div>
       <hr>
     </div>
-    {% if total %}
+    {% if total and not on_profile_page %}
       <p><strong>My Basket - Items({{ durag_count }})</strong></p>
       <hr>
       <div class="basket-display-toast">
