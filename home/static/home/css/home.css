@@ -1,5 +1,16 @@
 /* carousel */
 
+.carousel {
+    height: 100%;
+    background: #12232E;
+  }
+ 
+  .carousel-inner > .item > img {
+    min-width: 100%;
+    width: 100%;
+  }
+ 
+
 /* jumbotron */
 
 .jumbotron {
