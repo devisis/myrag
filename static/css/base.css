@@ -54,7 +54,7 @@ hr {
 
 /* jumbotron */
 
-.jumbotron-fluid {
+.jumbotron, .jumbotron-fluid {
     background-color: #203647;
 }
 
@@ -117,6 +117,9 @@ input::-webkit-inner-spin-button {
     overflow-x: hidden;
 }
 
+.toast-body {
+    background-color:#007CC7;
+}
 
 /* Footer */
 
