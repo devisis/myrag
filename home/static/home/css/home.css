@@ -5,11 +5,9 @@
     background: #12232E;
   }
  
-  .carousel-inner > .item > img {
-    min-width: 100%;
-    width: 100%;
+  .carousel-div {
+    height: 15vh;
   }
- 
 
 /* jumbotron */
 
