@@ -82,14 +82,12 @@
                             {{ order_form.postcode | as_crispy_field }}
                             <div class="float-left">
                                 <label class="save-delivery text-warning" for="save-delivery">Save your delivery
-                                    information
-                                    to
-                                    profile</label>
+                                    information to profile</label>
                                 <input type="checkbox" name="save-delivery" id="save-delivery" checked>
                             </div>
                         </fieldset>
                         <fieldset class="form-payment px-3">
-                            <legend class="fieldset-title px-2 w-auto text-info">Payment</legend>
+                            <legend class="fieldset-title px-2 my-2 w-auto text-info">Card Payment</legend>
                             <!-- stripe card payment form -->
                             <div class="mb-3" id="card-details"></div>
 
