@@ -3,10 +3,12 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-
-from products.models import Product
 from .models import Order, OrderLineItem
+from products.models import Product
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from basket.contexts import basket_items
+
 
 import stripe
 
@@ -93,10 +95,26 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    This will manage any uccessful checkout
+    This will manage any successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    profile = UserProfile.objects.get(user=request.user)
+    order.user_profile = profile
+    order.save()
+
+    if save_info:
+        profile_data = {
+            'default_street_1': order.street_1,
+            'default_street_2': order.street_2,
+            'default_county': order.county,
+            'default_postcode': order.postcode,
+        }
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+
     messages.success(request, f'Order successful! \
         Your order number: {order_number}. Check {order.email} \
         for a confirmation email.')

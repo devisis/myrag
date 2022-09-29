@@ -1,4 +1,7 @@
 /* General Styling */
+html {
+    height: 100%;
+}
 
 body {
     background-color: #12232E;
@@ -6,23 +9,14 @@ body {
     color: #EEFBFB;
 }
 
-h1, h2, h3, h4, h5, a{
+h1, h2, h3, h4, h5, a, p, li, thead{
  color: #EEFBFB;
  text-decoration: solid;
-}
-
-p {
-    color: #EEFBFB;
-}
-
-html {
-    height: 100%;
 }
 
 hr {
     border-top: 1px solid #203647;
 }
-
 
 /* Navbar */
 

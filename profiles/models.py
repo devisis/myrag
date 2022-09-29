@@ -10,10 +10,12 @@ class UserProfile(models.Model):
     Model for user profiles which will maintain order history and address
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    default_street_1 = models.CharField(null=True, blank=True, max_length=80)
-    default_street_2 = models.CharField(null=True, blank=True, max_length=80)
+    default_full_name = models.CharField(null=True, blank=True, max_length=120)
+    default_email = models.EmailField(null=True, blank=True, max_length=320)
+    default_street_1 = models.CharField(null=True, blank=True, max_length=150)
+    default_street_2 = models.CharField(null=True, blank=True, max_length=150)
     default_county = models.CharField(null=True, blank=True, max_length=80)
-    default_postcode = models.CharField(null=True, blank=True, max_length=80)
+    default_postcode = models.CharField(null=True, blank=True, max_length=15)
 
     def __str__(self):
         """
