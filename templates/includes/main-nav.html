@@ -30,25 +30,31 @@
     <li class="nav-item">
       <a class="nav-link" href="#" aria-label="The FAQ page">FAQ</a>
     </li>
+    {% if not request.user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'account_signup' %}" aria-label="The registration page">Register</a>
+    </li>
+    <li class="nav-item">
+
+      <a class="nav-link" href="{% url 'account_login' %}" aria-label="The login page">Login</a>
+    </li>
+    {% else %}
     <li class="nav-item dropdown">
       <a class="nav-link split dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         My Account
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarMenu">
-        {% if request.user.is_authenticated %}
         <a href="{% url 'profile' %}" class="dropdown-item" aria-label="The profile page">My Profile</a>
         <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="The logout page">Logout</a>
 
-          {% if request.user.is_superuser %}
+        {% if request.user.is_superuser %}
         <a href="#" class="dropdown-item">Pending Orders</a>
-          {% endif %}
-        {% else %}
-        <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="The registration page">Register</a>
-        <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="The login page">Login</a>
         {% endif %}
+
       </div>
     </li>
+    {% endif %}
     <li class="nav-item">
       <a class="nav-link split" href="{% url 'basket' %}" aria-label="The basket page">Basket
         <i class="fas fa-shopping-basket"></i>
