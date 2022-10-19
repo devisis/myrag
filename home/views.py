@@ -1,7 +1,14 @@
 from django.shortcuts import render
 
+from products.models import Product
+
 
 def index(request):
-    """Aview to return the index page"""
+    """A view to return the index page"""
+    products = Product.objects.all()
 
-    return render(request, "home/index.html")
+    context = {
+        'products': products,
+    }
+
+    return render(request, "home/index.html", context)
