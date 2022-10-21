@@ -23,15 +23,15 @@
                 <h3 class="text-center">Shopping Basket</h3>
                 <div class="row">
                     <div class="col-3 checkout-rag-img">
-                
+
                     </div>
                     <div class="col-3">
-                
+
                     </div>
                     <div class="col-3">
-                    
+
                     </div>
-                    
+
                     <div class="col-3">
                         <p>Price</p>
                     </div>
@@ -65,8 +65,10 @@
 
             <hr>
             <div class="col-md-6">
-                <div class="row my-2 pl-3">
-                    <p>Please fill out the checkout form to purchase durags</p>
+                <div class="row my-2 pl-3 pt-3">
+                    <strong>
+                        <p class="px-3">Please fill out the checkout form to purchase durags</p>
+                    </strong>
                     <form action="{% url 'checkout' %}" id="payment-form" method="POST">
                         {% csrf_token %}
                         <fieldset class="form-details px-3">
@@ -81,9 +83,19 @@
                             {{ order_form.county | as_crispy_field }}
                             {{ order_form.postcode | as_crispy_field }}
                             <div class="float-left">
+                                {% if user.is_authenticated %}
                                 <label class="save-delivery text-warning" for="save-delivery">Save your delivery
                                     information to profile</label>
                                 <input type="checkbox" name="save-delivery" id="save-delivery" checked>
+                                {% else %}
+                                <label class="form-check-label" for="id-save-info">
+                                    <strong> New User? </strong><a class="text-info"
+                                        href="{% url 'account_signup' %}">Create an account.</a> <strong>Already have an
+                                        account?</strong>
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save your
+                                    delivery information.
+                                </label>
+                                {% endif %}
                             </div>
                         </fieldset>
                         <fieldset class="form-payment px-3">
@@ -91,13 +103,13 @@
                             <!-- stripe card payment form -->
                             <div class="mb-3" id="card-details"></div>
 
-                            
+
                             <!-- stripe form error display -->
                             <div class="text-danger" id="card-errors" role="alert">
                             </div>
                             <input type="hidden" value="{{ client_secret }}" name="client_secret">
                         </fieldset>
-                        
+
                         <div class="submit-btn m-4">
                             <a href="{% url 'basket' %}" class="btn btn-warning">Edit Basket</a>
                             <button id="submit-btn" class="btn btn-success">Make Order</button>
