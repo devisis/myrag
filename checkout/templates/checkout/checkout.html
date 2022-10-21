@@ -40,8 +40,12 @@
                 <div class="row">
                     {% for durag_info in basket_durags %}
                     <div class="col-3 d-flex">
-                        {% if durag_info.product.featured_image %}
-                        <img src="{{ durag_info.durag.featured_image.url }}" alt="{{ durag_info.durag.name }}">
+                        {% if durag_info.durag.featured_image.url %}
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <img class="rounded img-fluid embed-responsive-item"
+                              src="{{ durag_info.durag.featured_image.url }}"
+                              alt="{{ durag_info.product.name }}">
+                          </div>
                         {% else %}
                         <img src="#" alt="{{ durag_info.durag.name }}">
                         {% endif %}
@@ -111,7 +115,7 @@
                         </fieldset>
 
                         <div class="submit-btn m-4">
-                            <a href="{% url 'basket' %}" class="btn btn-warning">Edit Basket</a>
+                            <span href="{% url 'basket' %}" class="btn btn-warning">Edit Basket</span>
                             <button id="submit-btn" class="btn btn-success">Make Order</button>
                             <p><span>Your card will be billed <strong>£{{ total|floatformat:2 }}</strong></span></p>
 

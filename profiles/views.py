@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -7,6 +8,7 @@ from .forms import UserProfileForm
 from checkout.models import Order
 
 
+@login_required
 def profile(request):
     """ Display the profile information. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -18,6 +20,8 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile Updated!')
+        else:
+            messages.error(request, 'Form invalid. Please try again with valid inputs.')
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -33,6 +37,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ A view to show past orders """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
