@@ -21,7 +21,9 @@
   <div class="row d-flex justify-content-center">
     {% for product in products %}
     <div class="card m-1" style="width: 18rem;">
-      <img src="{{ product.featured_image.url }}" class="card-img-top" alt="{{ product.name }}">
+      <div class="embed-responsive embed-responsive-4by3">
+      <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item" alt="{{ product.name }}">
+    </div>
       <div class="card-body">
         <h5 class="card-title"> {{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>

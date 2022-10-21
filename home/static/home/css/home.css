@@ -1,16 +1,16 @@
-/* carousel */
-
-.carousel {
-    height: 100%;
-    background: #12232E;
-  }
- 
-  .carousel-div {
-    height: 15vh;
-  }
-
 /* jumbotron */
 
-.jumbotron {
-    background-color: #203647;
+.jumbotron:first-of-type {
+  background-image: url("https://res.cloudinary.com/dlu3hxwmb/image/upload/v1664447981/media/bandana-myrag_vxdap3.jpg");
+  background-color: var(--clr-dark);
+  background-size: cover;
+  margin: 0;
+  color: var(--clr-white);
+}
+
+.shipping-band {
+  color:red;
+}
+.embed-responsive .card-img-top {
+  object-fit: cover;
 }

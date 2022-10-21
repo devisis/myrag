@@ -1,40 +1,57 @@
 /* General Styling */
+:root {
+    --primary-blue:#12232E;
+    --secondary-blue: #203647;
+    --extra-blue: #007CC7;
+    --clr-white: #EEFBFB;
+    --clr-dark: #242423;
+
+}
+
 html {
     height: 100%;
 }
 
 body {
-    background-color: #12232E;
+    background-color:var(--background-blue);
     background-size: cover;
-    color: #EEFBFB;
+    color: var(--clr-white)
 }
 
-h1, h2, h3, h4, h5, a, p, li, thead{
- color: #EEFBFB;
- text-decoration: solid;
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p,
+li,
+thead {
+    color: var(--clr-white);
+    text-decoration: solid;
 }
 
 hr {
-    border-top: 1px solid #203647;
+    border-top: 1px solid var(--secondary-blue);
 }
 
 /* Navbar */
 
-.navbar-brand{
-    color: #007CC7;
+.navbar-brand {
+    color: var(--extra-blue);
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #EEFBFB;
-    
+    color:var(--clr-white);
+
 }
 
 .navbar {
-    background-color: #203647;
+    background-color: var(--secondary-blue);
 }
 
 .navbar-toggler {
-    background-color: #007CC7;
+    background-color: var(--extra-blue);
 }
 
 /* Main Page */
@@ -50,6 +67,7 @@ hr {
     font-size: 200%;
 }
 
+
 /* All Durags Page */
 
 .card {
@@ -57,7 +75,7 @@ hr {
 
 }
 
-input[type=number]{
+input[type=number] {
     -moz-appearance: textfield;
 }
 
@@ -71,23 +89,23 @@ input[type=number]{
 /* remove input arrows  */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .qty_input {
-    width:2.5em;
+    width: 2.5em;
 }
 
-.table{
-	text-align:center
+.table {
+    text-align: center
 }
 
 /* toasts */
 .toast-container {
     z-index: 999999999999;
     position: fixed;
-    top: 56px; 
+    top: 56px;
     right: 5px;
 }
 
@@ -96,7 +114,7 @@ input::-webkit-inner-spin-button {
 }
 
 .toast p {
-    color:black;
+    color: var(--clr-dark);
 }
 
 .toast-status-bar {
@@ -110,7 +128,7 @@ input::-webkit-inner-spin-button {
 }
 
 .toast-body {
-    background-color:#007CC7;
+    background-color: var(--extra-blue);
 }
 
 /* Footer */
@@ -118,9 +136,9 @@ input::-webkit-inner-spin-button {
 footer {
     margin-top: 2%;
     padding-top: 2em;
-    background-color: #203647;
+    background-color: var(--secondary-blue);
     display: flex;
-    flex-flow:row wrap;
+    flex-flow: row wrap;
 }
 
 footer ul {
