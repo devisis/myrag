@@ -1,6 +1,6 @@
 /* General Styling */
 :root {
-    --primary-blue:#12232E;
+    --primary-blue: #12232E;
     --secondary-blue: #203647;
     --extra-blue: #007CC7;
     --clr-white: #EEFBFB;
@@ -13,9 +13,18 @@ html {
 }
 
 body {
-    background-color:var(--background-blue);
+    background-color: var(--background-blue);
     background-size: cover;
-    color: var(--clr-white)
+    color: var(--clr-white);
+    /* stop navbar blocking top content */
+    padding-top: 60px; 
+}
+
+/* stop navbar blocking top content */
+@media (max-width: 979px) {
+    body {
+        padding-top: 0px;
+    }
 }
 
 h1,
@@ -42,7 +51,7 @@ hr {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color:var(--clr-white);
+    color: var(--clr-white);
 
 }
 
