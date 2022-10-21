@@ -8,7 +8,9 @@
 
 }
 
-html {
+html,
+body,
+header {
     height: 100%;
 }
 
@@ -16,16 +18,8 @@ body {
     background-color: var(--background-blue);
     background-size: cover;
     color: var(--clr-white);
-    /* stop navbar blocking top content */
-    padding-top: 60px; 
 }
 
-/* stop navbar blocking top content */
-@media (max-width: 979px) {
-    body {
-        padding-top: 0px;
-    }
-}
 
 h1,
 h2,
