@@ -7,7 +7,6 @@ if os.path.exists("env.py"):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
-# DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = False
 
 ALLOWED_HOSTS = ["myrag.herokuapp.com", "localhost"]
@@ -24,17 +23,19 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'crispy_forms',
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
     'home',
     'products',
     'basket',
     'checkout',
     'profiles',
 
+    'crispy_forms',
 ]
 
 SITE_ID = 1

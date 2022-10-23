@@ -117,7 +117,11 @@ input::-webkit-inner-spin-button {
 }
 
 .toast p {
-    color: var(--clr-dark);
+    color: var(--clr-white);
+}
+
+.toast hr {
+    color: var(--secondary-blue);
 }
 
 .toast-status-bar {

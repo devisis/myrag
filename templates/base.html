@@ -42,9 +42,9 @@
 </head>
 
 <body>
-  
+
   {% include 'includes/main-nav.html' %}
-  
+
   {% if messages %}
   <section class="toast-container" id="alerts">
     {% for msg in messages %}
@@ -68,42 +68,56 @@
 
   {% block content %}
   {% endblock %}
+  <footer class="container-fluid">
 
-  <footer class="container-fluid px-4 width-100">
-    <div class="col-3">
-      <h6 class="uppercase" aria-label="Useful links">Useful Links:</h6>
-      <ul>
-        <li class="footer-list"><a href="{% url 'home' %}" aria-label="The home page">Home</a></li>
-        <li class="footer-list"><a href="{% url 'durags' %}" aria-label="The menu page">Shop</a></li>
-        <li class="footer-list"><a href="{% url 'profile' %}" aria-label="The menu page">My Profile</a></li>
-      </ul>
+    <div class="row d-flex flex-xs-row">
+      <div class="col">
+        <ul>
+          <h6 aria-label="Useful links">Useful:</h6>
+          <li class="footer-list"><a href="{% url 'home' %}" aria-label="The home page">Home</a></li>
+          <li class="footer-list"><a href="{% url 'durags' %}" aria-label="The menu page">Shop</a></li>
+          <li class="footer-list"><a href="{% url 'profile' %}" aria-label="The menu page">My Profile</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <h6 aria-label="Useful links">Socials:</h6>
+          <li class="list-item">
+            <a href="https://www.facebook.com/myrag" class="btn-floating btn-lg" aria-label="Facebook link"
+              target="_blank" rel="nofollow">
+              <i class="fab fa-facebook social"></i>
+            </a>
+          </li>
+          <li class="list-item">
+            <a href="https://www.github.com/devisis/" class="btn-floating btn-lg" aria-label="Github link"
+              target="_blank" rel="nofollow">
+              <i class="fab fa-github social"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <h6 aria-label="Contact links">Contact Us:</h6>
+          <li class="footer-list" aria-label="The contact number">Contact Number: 01234567891</li>
+          <li class="footer-list" aria-label="The email">Contact Email: myrag@gmail.com</li>
+        </ul>
+      </div>
+      <div class="col d-flex align-items-center float-right">
+        <ul>
+          <li>
+            &copy; 2022 Myrag.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="col-3">
-      <h6 class="uppercase" aria-label="Contact links">Contact Us:</h6>
-      <ul>
-        <li class="footer-list" aria-label="The contact number">Contact Number: 01234567891</li>
-        <li class="footer-list" aria-label="The email">Contact Email: myrag@gmail.com</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="list-unstyled">
-        <li class="list-item">
-          <a href="https://www.facebook.com/myrag" class="btn-floating btn-lg" aria-label="Facebook link"
-            target="_blank" rel="nofollow">
-            <i class="fab fa-facebook social"></i>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="https://www.github.com/devisis/" class="btn-floating btn-lg" aria-label="Github link"
-            target="_blank" rel="nofollow">
-            <i class="fab fa-github social"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <h4 class="footer-brand mt-4"> MyRag </h4>
-    </div>
+
+
+
+
+
+
+
   </footer>
 
   {% block postloadjs %}
