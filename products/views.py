@@ -39,3 +39,48 @@ def create_product(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_product(request, product_id):
+    """ Update existing durag """
+    # set product to equal the instance established by the primary key
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = AddProductForm(request.POST, request.FILES, instance=product)
+        # if the form is valid add success message and redirect to all durag page
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('view_products'))
+        else:
+            messages.error(request,
+                           ('Failed to update product. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = AddProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product_form.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+    return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """ Delete selected durag """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Durags deleted!')
+    return redirect(reverse('durags'))
+
+
+def delete_all_products(request):
+    """Delete all durags """
+    products = Products.object.all()
+    products.delete()
+    messages.success(request, 'All durags deleted!')
+    return redirect(reverse('durags'))
