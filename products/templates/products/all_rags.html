@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-<title>Myrag - store </title>
+<title> Myrag - store </title>
 {% endblock %}
 
 {% block page_header %}
@@ -12,35 +12,56 @@
 {% block content %}
 
 <div class="container-fluid text-center">
-  <div class="row">
+  <div class="row m-3">
     <div class="col-12">
+      {% if request.user.is_superuser %}
+      <h2>Manage Durags</h2>
+      {% else %}
       <h2>Shop Durags</h2>
+      {% endif %}
       <hr class="color-success">
     </div>
   </div>
+  {% if request.user.is_superuser %}
+  <div class="row">
+    <div class="col small">
+      <a href="{% url 'create_product' %}" class="btn btn-info">Add New Durag</a>
+      <a href="#" class="btn btn-danger m-3">Delete All Durags</a>
+    </div>
+  </div>
+  {% endif %}
   <div class="row d-flex justify-content-center">
     {% for product in products %}
-    <div class="card m-1" style="width: 18rem;">
+    <div class="card m-1" style="width: 12rem;">
+
       <div class="embed-responsive embed-responsive-4by3">
-      <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item" alt="{{ product.name }}">
-    </div>
+        <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item" alt="{{ product.name }}">
+      </div>
+      {% if request.user.is_superuser %}
+      <div class="small">
+        <a href="{% url 'edit_product' product.id %}" class="text-warning">Edit</a> -
+        <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+      </div>
+      {% endif %}
       <div class="card-body">
-        <h5 class="card-title"> {{ product.name }}</h5>
-        <p class="card-text">{{ product.description }}</p>
-        <p class="card-text">{{ product.price }}</p>
+        <p class="card-text small">£{{ product.price }}</p>
+        <p class="card-title lead"> {{ product.name }}</p>
+        <p class="card-text small m-0">{{ product.description }}</p>
+        <hr>
         <form action="{% url 'add_to_basket' product.id %}" method="POST">
           {% csrf_token %}
           <select name="quantity" id="{{ product.pk }}_quantity">
             <option value="1">1</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
           </select>
-          <button type="submit" class="btn btn-success">add to basket</button>
-        
+          <a type="submit" class=" text-success small"> Add to basket</a>
+
         </form>
-        
+
       </div>
-    </div> 
+    </div>
     {% endfor %}
   </div>
 </div>

@@ -4,17 +4,26 @@
 <title>Myrag - add product </title>
 {% endblock %}
 {% block content %}
-{% load crispy_forms_tags %}
-<section class="container-fluid">
-    <div class="container">
-        <h1 class="m-4 text-center">Add a new Product</h1>
-        <form action="POST" class="add-product-form">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <br>
-            <button type="submit" value="Post" class="btn btn-success mb-4">Add New Rag</button>
-        </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 class="m-4 text-center">Add a new Durag</h1>
+        </div>
     </div>
-</section>
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <form method="POST" action="{% url 'create_product' %}" class="add-product-form"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
+                <div>
+                    <a href="{% url 'durags' %}" class="btn btn-info">Go Back</a>
+                    <button type="submit" class="btn btn-success">Add New Rag</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
