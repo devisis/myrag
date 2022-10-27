@@ -1,15 +1,15 @@
 from pathlib import Path
 import dj_database_url
 import os
-if os.path.exists("env.py"):
+if os.path.exists('env.py'):
     import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ["myrag.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ['myrag.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -61,7 +61,7 @@ TEMPLATES = [
         'DIRS': [
             TEMPLATES_DIR,
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, "templates", "allauth"),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -101,17 +101,17 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'myrag.wsgi.application'
 
-if "DATABASE_URL" in os.environ:
-    print("database = PostgreSQL via Heroku")
+if 'DATABASE_URL' in os.environ:
+    print('database = PostgreSQL via Heroku')
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
-    print("database = db.sqlite3")
+    print('database = db.sqlite3')
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
@@ -153,12 +153,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
