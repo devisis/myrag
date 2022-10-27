@@ -25,6 +25,7 @@
 
   {% block corejs %}
   <!-- full jquery so that post is available for use -->
+  <script src="https://kit.fontawesome.com/111412ee7e.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
@@ -35,7 +36,6 @@
   {% endblock %}
 
   {% block extrajs %}
-  <script src="https://kit.fontawesome.com/111412ee7e.js" crossorigin="anonymous"></script>
   {% endblock %}
 
   <title>Myrag {% block extra_title %}{% endblock %}</title>
@@ -46,7 +46,7 @@
   {% include 'includes/main-nav.html' %}
 
   {% if messages %}
-  <section class="toast-container" id="alerts">
+  <div class="toast-container" id="alerts">
     {% for msg in messages %}
     {% with msg.level as level %}
     {% if level == 40 %}
@@ -60,7 +60,7 @@
     {% endif %}
     {% endwith %}
     {% endfor %}
-  </section>
+  </div>
   {% endif %}
 
   {% block page_header %}
@@ -111,13 +111,6 @@
         </ul>
       </div>
     </div>
-
-
-
-
-
-
-
   </footer>
 
   {% block postloadjs %}

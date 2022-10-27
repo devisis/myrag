@@ -37,11 +37,15 @@
             <tr>
               <td class="">
                 <!-- name of durag and image -->
-              
+                  {% if durag_info.durag.featured_image %}
                   <img class="rounded img-fluid" style="width: 100px; height: 100px; object-fit: cover;"
-                    src="{{ durag_info.durag.featured_image.url }}"
-                    alt="{{ durag_info.product.name }}">
-                
+                  src="{{ durag_info.durag.featured_image.url }}"
+                  alt="{{ durag_info.product.name }}">
+                  {% else %}
+                  <img class="rounded img-fluid" style="width: 100px; height: 100px; object-fit: cover;"
+                  src="{{ MEDIA_URL }}noimage.png"
+                  alt="{{ durag_info.product.name }}">
+                  {% endif %}
               </td>
               <td>
                 <p>{{ durag_info.durag.name }}</p>
