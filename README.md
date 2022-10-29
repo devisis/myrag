@@ -1,27 +1,25 @@
 # Myrag
 
 ## Introduction
-My rag is a custom headwrap website where customers can sort through options to pick and purchase a personalised headwrap based on color, material, style and custom message.
-
+Myrag is a custom headwrap/durag website. The name plays on the item of focus - durag, and aims to help the end user feel a personal connection to the item. 
 
 ## UX
 
-## Site Owner Goal
-Make a profit through the sale of headwraps using this website.
+### Strategy
 
-## External User Goal
-Find out more information about these custom headwraps and make a purchase.
+### Methodology - Agile
 
-## Business Model
-### Entity Relationship Diagram
-### CRUD Functionality
-admin faq product
-### SEO & Marketing
-#### FB Mockup
-#### Sitemap & Robots
+I decided to take an agile approach for the construction of my site. I made use of the projects section on GitHub, to impliments a MoSCoW prioritization technique.
+I molded a user story template and used this to create, and organise my user stories into 3 seperate lists. Lists which defined where each user story was, in terms of progress.
+To-do, in progress and done, all adequately named for the goal at hand.
 
+### Site Owner Goal
+Make a profit through the sale of headwraps using this website and to build a community of users.
 
-## User Stories
+### External User Goal
+Find out more information about these custom headwraps and make an informed purchase.
+
+### User Stories
 
 ### View & Navigation
 ![Desktop View](documentation/epics/view-navigation-us.png)
@@ -34,7 +32,12 @@ admin faq product
 
 ### Purchasing & Ceckout
 ![Desktop View](documentation/epics/purchasing-checkout-us.png)
- 
+
+
+### Entity Relationship Diagram
+ss
+
+### Wireframes
 
 #### Main Page
 
@@ -101,31 +104,154 @@ admin faq product
 
 ![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/gallery-upload.png)
+
+
+
+## Design
+
+### Color Scheme
+
+ss color pallet
+
+I wanted the background to have dark but positive colours. I explored this by using lighter and darker blues throughout the website. This was to give the product images the ambience needed to thrive and take center stage.
+
+
+### Font Choice
+
+I went on google fonts and browsed through a selection of fonts. I used a variety of sample text to have visual comparison and settled on what I found to be a sleek font for the headings of my webpages and a tidy font for the data.
+
+ss
+
+### CRUD Functionality
+
+#### Admin 
+- The admin users of myrag have the ability to delete products.
+ss
+- The admin users of myrag have the ability to create products.
+ss
+- The admin users of myrag have the ability to update products.
+ss
+- The admin users of myrag have the ability to delete users.
+ss
+
+#### User
+- The user has the ability to edit the amount of items in their basket.
+ss
+- The user has the ability to delete and item from their basket.
+ss
+- The user has the ability to add an item to their basket.
+ss
+
+
+### SEO & Marketing
+
+#### FB Mockup
+
+#### Sitemap & Robots
+
+
  
 
 ## Features 
-projects issues ss
+
+### Acces to Site
+
+#### Login Page
+![Login Page](documentation/features/log_in.png)
+
+#### Registration Page
+![Registration Page](documentation/features/registration_page.png)
+
+
+### Main Page
+
+#### Gallery of Menu
+![Gallery of Menu](documentation/features/home_page_gallery.png)
+
+### Shop Now Call To Action Button
+![Menu Page](documentation/features/)
+
+
+### Product
+
+#### Product Selection
+![Booking Page](documentation/features/) 
+
+#### Product Details
+![Booking Page](documentation/features/) 
+
+### Review
+
+#### Show Review
+![Booking Page](documentation/features/) 
+
+#### Add Review
+![Booking Page](documentation/features/) 
+
+
+### Basket
+
+### Add to Basket
+![Booking Page](documentation/features/)
+
+### Show Basket
+![Booking Page](documentation/features/manage_reservations_user.png)
+
+#### Update Basket Qauntity
+![Booking Page](documentation/features/)
+
+
+### Checkout
+
+### Checkout Page
+![Booking Page](documentation/features/delete_confirmation.png)
+
+### Update Checkout Items
+![Booking Page](documentation/features/update_reservation.png)
+
+#### Checkout Confirmation
+![Booking Page](documentation/features/)
+
+
+### Profile
+
+#### Default Delivery Information
+![Booking Page](documentation/features/)
+
+#### Order History
+
 
 ### Future Features
 
 ## Technologies Used
 
 - Git used for version control.
-- [GitHub]() was used for securely storing code.
+- HTML / CSS3 / [Bootstrap v4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) were used for the structure and overall look and feel of the website.
+- [Python] was used for the navigation and maneuverability of the site.
+- [Django](https://www.djangoproject.com/) was used as the framework.
+- [GitHub](https://github.com/) was used for securely storing code.
 - [Gitpod](https://gitpod.io/) is the cloud based IDE.
 - Python3 is used for the main code logic.
-- [Django](https://www.djangoproject.com/) was used as the framework
-- PostgreSQL
+- PostgreSQL is used for storing data.
 - [Heroku](https://heroku.com/) was used for live deployment.
 - [ShareX](https://getsharex.com/) for capturing screenshots.
+- [Font Awesome](https://fontawesome.com/) was used for the icons seen around the website.
+- [Google Fonts](https://fonts.google.com/) was used to select fonts for the website.
+- [Coolers](https://coolors.co/) was used as inspiration when selecting color combinations for the website.
+- [Draw.io](https://app.diagrams.net/) was used to construct my erd.
+
 
 ## Testing
 
 To view all testing documentation please refer to [TESTING.md](TESTING.md)
 
 ## Deployment
-cloudinary - stripe 
 
+### Cloudinary
+
+### Stripe 
+
+### Heroku
 The site was deployed using [Heroku](https://heroku.com/). The app can be found using this link - [Myrag](https://myrag.herokuapp.com/).
 
 The steps are as follows:
