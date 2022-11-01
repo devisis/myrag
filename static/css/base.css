@@ -8,16 +8,21 @@
 
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html,
-body,
-header {
+body {
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    background-color: var(--background-blue);
+    background-color: var(--primary-blue);
     background-size: cover;
-    color: var(--clr-white);
+    /* color: var(--clr-white); */
 }
 
 
@@ -29,15 +34,19 @@ h5,
 a,
 p,
 li,
+label,
 thead {
     color: var(--clr-white);
-    text-decoration: solid;
 }
 
 hr {
     border-top: 1px solid var(--secondary-blue);
 }
 
+.card {
+    background-color: rgb(32, 54, 71, 0.3);
+
+}
 /* Navbar */
 
 .navbar-brand {
@@ -49,15 +58,19 @@ hr {
 
 }
 
+.nav-link:hover {
+    padding: 6px;
+    border-bottom: 4px solid var(--secondary-blue);
+    border-bottom-right-radius: 5px;
+}
 .navbar {
-    background-color: var(--secondary-blue);
+    background-color: var(--primary-blue);
+    border-bottom: 3px solid var(--secondary-blue);
 }
 
 .navbar-toggler {
     background-color: var(--extra-blue);
 }
-
-/* Main Page */
 
 .nav-item {
     padding: 0 .5rem;
@@ -70,23 +83,18 @@ hr {
     font-size: 200%;
 }
 
-
 /* All Durags Page */
 
-.card {
-    background-color: rgb(32, 54, 71, 0.3);
-
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
 
 /* Basket Page */
 
 .bsk-link {
     font-size: 0.7rem;
     cursor: pointer;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 /* remove input arrows  */
@@ -120,8 +128,16 @@ input::-webkit-inner-spin-button {
     color: var(--clr-white);
 }
 
+.toast-header { 
+    background-color: var(--primary-blue);
+
+}
+
+.toast-body{ 
+    background-color: var(--secondary-blue);
+}
 .toast hr {
-    color: var(--secondary-blue);
+    color: var(--primary-blue);
 }
 
 .toast-status-bar {
@@ -134,16 +150,12 @@ input::-webkit-inner-spin-button {
     overflow-x: hidden;
 }
 
-.toast-body {
-    background-color: var(--extra-blue);
-}
-
 /* Footer */
 
 footer {
-    margin-top: 2%;
+    border-top: 2px solid var(--secondary-blue);
     padding-top: 2em;
-    background-color: var(--secondary-blue);
+    background-color: var(--primary-blue);
     display: flex;
     flex-flow: row wrap;
 }

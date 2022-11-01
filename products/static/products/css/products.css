@@ -1,0 +1,14 @@
+.products-main-card {
+    background-color: var(--clr-dark);
+    border-right: 4px solid var(--secondary-blue);
+    border-radius: 3px;
+}
+
+.products-main-card:hover {
+    background-color: var(--secondary-blue);
+    border-right: 4px solid var(--clr-dark);
+}
+
+.text-white {
+    color: black;
+}

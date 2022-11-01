@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block title %}
 <title> Myrag - store </title>
 {% endblock %}
@@ -11,7 +15,7 @@
 
 {% block content %}
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center p-2 products-main">
   <div class="row m-3">
     <div class="col-12">
       {% if request.user.is_superuser %}
@@ -32,7 +36,7 @@
   {% endif %}
   <div class="row d-flex justify-content-center">
     {% for product in products %}
-    <div class="card m-1" style="width: 12rem;">
+    <div class="card products-main-card m-1" style="width: 12rem;">
 
       <div class="embed-responsive embed-responsive-4by3">
         <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item" alt="{{ product.name }}">
@@ -56,8 +60,7 @@
             <option value="5">5</option>
             <option value="10">10</option>
           </select>
-          <a type="submit" class=" text-success small"> Add to basket</a>
-
+          <button type="submit" class="btn btn-sm text-success small"> Add to basket</button>
         </form>
 
       </div>
