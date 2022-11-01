@@ -11,40 +11,25 @@
 {% block content %}
 <!-- Carousel -->
 
-<div class="container-fluid">
-
+<div class="container-fluid index-main text-center">
   <div class="row">
-    <div class="col p-0">
-      <div class="jumbotron jumbotron-fluid index-main-bg text-center m-0">
-        <div class="container">
-          <h1 class="display-4">Myrag</h1>
-          <p class="lead">It's my rag.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col bg-info text-center">
+    <div class="col event-band">
       <p class="font-weight-bold p-2 m-0 shipping-band"> Free Shipping on ALL orders! </p>
     </div>
   </div>
 
   <div class="row">
     <div class="col p-0">
-      <div class="jumbotron jumbotron-fluid" style="background-color: hsl(208, 57%, 8%);">
-        <div class="container text-center">
-          <h1 class="display-4"> More Than Just A Rag. </h1>
+      <div class="jumbotron jumbotron-fluid index-main-bg m-0">
+        <div class="container">
+          <h1 class="display-4">Myrag</h1>
           <p class="lead">The UK's Leading Durag Brand</p>
-          <a href="{% url 'durags' %}" class="btn btn-secondary btn-success btn-lg active" role="button"
-            aria-pressed="true">Shop Now</a>
-
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row product-gallery">
     <div class="col d-flex justify-content-center">
       <!-- Create a index of product images to display a small gallery  -->
       {% for product in products %}
@@ -56,6 +41,19 @@
         </div>
       </div>
       {% endfor %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col p-0">
+      <div class="jumbotron jumbotron-fluid">
+        <a href="{% url 'durags' %}" class="btn btn-secondary btn-success btn-lg active" role="button"
+          aria-pressed="true">Shop Now</a>
+        <div class="container">
+          <p class="lead"> More Than Just A Rag. </p>
+          <p class="display-4">It's my rag.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
