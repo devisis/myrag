@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-6 text-center">
                 <hr>
-                <h2 class="test">Checkout Form</h2>
+                <h2>Checkout Form</h2>
                 <hr>
             </div>
         </div>
@@ -76,7 +76,7 @@
                     <form action="{% url 'checkout' %}" id="payment-form" method="POST">
                         {% csrf_token %}
                         <fieldset class="form-details px-3">
-                            <legend class="fieldset-labdel text-info">Details</legend>
+                            <legend class="fieldset-title text-info">Details</legend>
                             {{ order_form.full_name | as_crispy_field }}
                             {{ order_form.email | as_crispy_field }}
                         </fieldset>
