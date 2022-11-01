@@ -22,4 +22,4 @@ class AddProductForm(forms.ModelForm):
 
         # add bootstrap classes to customise fields
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'text-white border border-info rounded-sm'
+            field.widget.attrs['class'] = 'border-bottom border-info rounded-sm'
