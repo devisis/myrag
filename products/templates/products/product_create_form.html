@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-<title>Myrag - add product </title>
+<title>Myrag - edit product </title>
 {% endblock %}
 {% block content %}
 <div class="container-fluid">
@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 mx-auto">
+        <div class="col-4 mx-auto">
             <form method="POST" action="{% url 'create_product' %}" class="add-product-form"
                 enctype="multipart/form-data">
                 {% csrf_token %}

@@ -31,6 +31,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 a,
 p,
 li,
@@ -166,11 +167,16 @@ input::-webkit-inner-spin-button {
 footer {
     border-top: 2px solid var(--secondary-blue);
     padding-top: 2em;
-    background-color: var(--primary-blue);
     display: flex;
+    background-color: #0e1d26;
     flex-flow: row wrap;
 }
 
 footer ul {
     list-style-type: none;
+}
+
+.myrag-footer-logo {
+    width: 30px;
+    height: 30px;
 }

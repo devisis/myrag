@@ -12,3 +12,11 @@
 .text-white {
     color: black;
 }
+
+.durag-display-main {
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #0e1d26;
+}
