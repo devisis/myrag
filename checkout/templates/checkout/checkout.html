@@ -114,9 +114,9 @@
                             <input type="hidden" value="{{ client_secret }}" name="client_secret">
                         </fieldset>
 
-                        <div class="submit-btn m-4">
-                            <span href="{% url 'basket' %}" class="btn btn-warning">Edit Basket</span>
-                            <button id="submit-btn" class="btn btn-success">Make Order</button>
+                        <div class="m-4">
+                            <a href="{% url 'basket' %}" class="btn btn-warning">Edit Basket</a>
+                            <button id="submit-btn" class="btn btn-success m-3">Make Order</button>
                             <p><span>Your card will be billed <strong>£{{ total|floatformat:2 }}</strong></span></p>
 
                         </div>

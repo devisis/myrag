@@ -5,7 +5,8 @@
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 {% endblock %}
 
-{% block page_header %}
+{% block extra_title %}
+home
 {% endblock %}
 
 {% block content %}
@@ -15,8 +16,8 @@
     <p class=" font-italic p-1 m-0"> Free Shipping on ALL orders! </p>
   </div>
 </div>
-<div class="container-fluid index-main text-center">
 
+<div class="container-fluid index-main text-center">
   <div class="row">
     <div class="col p-0">
       <div class="jumbotron jumbotron-fluid">
@@ -32,27 +33,34 @@
     </div>
   </div>
 </div>
+
 <div class="container-fluid text-center p-3">
+
   <div class="row">
     <div class="col">
       <p class="float-left lead">Browse Selection </p>
       <hr>
     </div>
   </div>
-  <div class="row d-flex justify-content-center  recently-added">
-    <!-- Create a index of product images to display a small gallery  -->
-    {% for product in products %}
-    <div class="card m-1 gallery-item" style="width: 12rem;">
-      <div class="embed-responsive embed-responsive-4by3">
-        <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
-          alt="{{ product.name }}">
 
+  <div class="row">
+    <div class="container  d-flex recently-added">
+      <!-- Create a index of product images to display a small gallery  -->
+      {% if products %}
+      {% for product in products %}
+      <div class="card m-1 gallery-item" style="width: 20rem;">
+        <div class="embed-responsive embed-responsive-16by9">
+          <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
+            alt="{{ product.name }}">
+
+        </div>
+        <div class="card-body">
+          <p class="card-text text-muted">{{ product.name }}</p>
+        </div>
       </div>
-      <div class="card-body">
-        <p class="card-text text-muted">{{ product.name }}</p>
-      </div>
+      {% endfor %}
+      {% endif %}
     </div>
-    {% endfor %}
   </div>
 
 </div>

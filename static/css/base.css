@@ -20,6 +20,9 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: var(--primary-blue);
     background-size: cover;
