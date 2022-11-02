@@ -4,7 +4,6 @@
 <title>Myrag - add product </title>
 {% endblock %}
 {% block content %}
-{% load crispy_forms_tags %}
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -12,7 +11,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-4 mx-auto">
             <form method="POST" action="{% url 'edit_product' product.id %}" class="edit-product-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}

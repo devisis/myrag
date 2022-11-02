@@ -2,6 +2,7 @@
 :root {
     --primary-blue: #12232E;
     --secondary-blue: #203647;
+    --tertiary-blue: #0e1d26;
     --extra-blue: #007CC7;
     --clr-white: #EEFBFB;
     --clr-dark: #242423;
@@ -50,10 +51,6 @@ hr {
 }
 /* Navbar */
 
-.navbar-brand {
-    color: var(--extra-blue);
-}
-
 .navbar-dark .navbar-nav .nav-link {
     color: var(--clr-white);
 
@@ -70,12 +67,11 @@ hr {
 }
 
 .navbar-toggler {
-    background-color: var(--extra-blue);
+    background-image: linear-gradient(to right, #007CC7, #0e1d26);
 }
 
 .navbar-toggler:hover {
-    background-color: var(--secondary-blue);
-    z-index: 2;
+    background-image: linear-gradient(to left, #007CC7, #0e1d26);
   }
 
 .nav-item {
@@ -89,36 +85,7 @@ hr {
     font-size: 200%;
 }
 
-/* All Durags Page */
-
-
-/* Basket Page */
-
-.bsk-link {
-    font-size: 0.7rem;
-    cursor: pointer;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-/* remove input arrows  */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.qty_input {
-    width: 2.5em;
-}
-
-.table {
-    text-align: center
-}
-
-/* toasts */
+/* Toasts */
 .toast-container {
     z-index: 999999999999;
     position: fixed;
@@ -168,7 +135,7 @@ footer {
     border-top: 2px solid var(--secondary-blue);
     padding-top: 2em;
     display: flex;
-    background-color: #0e1d26;
+    background-color: var(--tertiary-blue);
     flex-flow: row wrap;
 }
 

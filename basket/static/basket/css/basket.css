@@ -1,0 +1,27 @@
+.basket-display {
+    background-color: var(--tertiary-blue);
+}
+
+.bsk-link {
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* remove input arrows  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.qty_input {
+    width: 2.5em;
+}
+
+.table {
+    text-align: center
+}

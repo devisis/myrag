@@ -5,6 +5,10 @@
   background-size: cover;
 }
 
+.event-band {
+  background-image: linear-gradient(to right, #007CC7, #0e1d26);
+}
+
 .jumbotron {
   background: none; 
   margin: 0;
@@ -15,10 +19,6 @@
   object-fit: cover;
 }
 
-.event-band {
-  background-color: var(--extra-blue);
-}
-
 .gallery-img:hover,
 .gallery-item:focus .gallery-img {
   transform: scale(2);
@@ -26,6 +26,16 @@
   cursor: pointer;
 }
 
-.gallery-item {
-  width: 15rem;
+
+.gallery-item:hover {
+  background-color: var(--tetiery-blue);
+}
+
+.recently-added {
+  background-color: #051119;
+  border-radius: 10px;
+  padding: 20px;
+  width: 75%;
+  height: 75%;
+  margin: 0 auto;
 }

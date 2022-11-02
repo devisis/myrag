@@ -9,53 +9,52 @@
 {% endblock %}
 
 {% block content %}
-<!-- Carousel -->
 
+<div class="row">
+  <div class="col event-band">
+    <p class=" font-italic p-1 m-0"> Free Shipping on ALL orders! </p>
+  </div>
+</div>
 <div class="container-fluid index-main text-center">
-  <div class="row">
-    <div class="col event-band">
-      <p class="font-weight-bold p-2 m-0 shipping-band"> Free Shipping on ALL orders! </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col p-0">
-      <div class="jumbotron jumbotron-fluid index-main-bg m-0">
-        <div class="container">
-          <h1 class="display-4">Myrag</h1>
-          <p class="lead">The UK's Leading Durag Brand</p>
-          <a href="{% url 'durags' %}" class="btn btn-secondary btn-success btn-lg shop-now" role="button"
-          aria-pressed="true">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row product-gallery">
-    <div class="col d-flex justify-content-center ">
-      <!-- Create a index of product images to display a small gallery  -->
-      {% for product in products %}
-      <div class="card m-1 gallery-item">
-        <div class="embed-responsive embed-responsive-4by3">
-          <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
-            alt="{{ product.name }}">
-
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
 
   <div class="row">
     <div class="col p-0">
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <p class="lead m-0 pt-1"> More Than Just A Rag. </p>
+          <img src="https://res.cloudinary.com/dlu3hxwmb/image/upload/v1667386841/favicon-32x32_yl5ldq.png" alt="Myrag"
+            class="myrag-footer-logo mx-auto">
+          <p class="dispay-1  mt-4"> More Than Just A Rag. </p>
           <p class="display-4 ">It's my rag.</p>
+          <a href="{% url 'durags' %}" class="btn btn-secondary btn-success btn-lg shop-now p-2" role="button"
+            aria-pressed="true">Shop Now</a>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="container-fluid text-center p-3">
+  <div class="row">
+    <div class="col">
+      <p class="float-left lead">Browse Selection </p>
+      <hr>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center  recently-added">
+    <!-- Create a index of product images to display a small gallery  -->
+    {% for product in products %}
+    <div class="card m-1 gallery-item" style="width: 12rem;">
+      <div class="embed-responsive embed-responsive-4by3">
+        <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
+          alt="{{ product.name }}">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text text-muted">{{ product.name }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
 </div>
 
 
