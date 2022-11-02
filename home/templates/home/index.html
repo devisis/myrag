@@ -24,16 +24,18 @@
         <div class="container">
           <h1 class="display-4">Myrag</h1>
           <p class="lead">The UK's Leading Durag Brand</p>
+          <a href="{% url 'durags' %}" class="btn btn-secondary btn-success btn-lg shop-now" role="button"
+          aria-pressed="true">Shop Now</a>
         </div>
       </div>
     </div>
   </div>
 
   <div class="row product-gallery">
-    <div class="col d-flex justify-content-center">
+    <div class="col d-flex justify-content-center ">
       <!-- Create a index of product images to display a small gallery  -->
       {% for product in products %}
-      <div class="card m-1 gallery-item" style="width: 18rem; ">
+      <div class="card m-1 gallery-item">
         <div class="embed-responsive embed-responsive-4by3">
           <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
             alt="{{ product.name }}">
@@ -47,11 +49,9 @@
   <div class="row">
     <div class="col p-0">
       <div class="jumbotron jumbotron-fluid">
-        <a href="{% url 'durags' %}" class="btn btn-secondary btn-success btn-lg active" role="button"
-          aria-pressed="true">Shop Now</a>
         <div class="container">
-          <p class="lead"> More Than Just A Rag. </p>
-          <p class="display-4">It's my rag.</p>
+          <p class="lead m-0 pt-1"> More Than Just A Rag. </p>
+          <p class="display-4 ">It's my rag.</p>
         </div>
       </div>
     </div>
