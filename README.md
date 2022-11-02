@@ -126,21 +126,14 @@ ss
 
 #### Admin 
 - The admin users of myrag have the ability to delete products.
-ss
 - The admin users of myrag have the ability to create products.
-ss
 - The admin users of myrag have the ability to update products.
-ss
 - The admin users of myrag have the ability to delete users.
-ss
 
 #### User
 - The user has the ability to edit the amount of items in their basket.
-ss
 - The user has the ability to delete and item from their basket.
-ss
 - The user has the ability to add an item to their basket.
-ss
 
 
 ### SEO & Marketing
@@ -154,72 +147,96 @@ ss
 
 ## Features 
 
+### General
+
+#### Navbar
+![Navbar](documentation/features/navbar.png)
+
+#### Footer
+![Footer](documentation/features/footer.png)
+
+
 ### Acces to Site
 
 #### Login Page
-![Login Page](documentation/features/log_in.png)
+![Login Page](documentation/features/login.png)
 
 #### Registration Page
-![Registration Page](documentation/features/registration_page.png)
+![Registration Page](documentation/features/registration.png)
 
 
 ### Main Page
 
-#### Gallery of Menu
-![Gallery of Menu](documentation/features/home_page_gallery.png)
+#### Shop Now Call To Action Button
+![Shop Now](documentation/features/jumbotron-shop-now.png)
 
-### Shop Now Call To Action Button
-![Menu Page](documentation/features/)
+#### Free Delivery Banner
+![Free Delivery Banner](documentation/features/free-delivery.png)
+
+#### Gallery of Menu
+![Gallery of Menu](documentation/features/browse-selection.gif)
 
 
 ### Product
 
 #### Product Selection
-![Booking Page](documentation/features/) 
+![Product Selection](documentation/features/shop-durag.png) 
 
-#### Product Details
-![Booking Page](documentation/features/) 
+<!-- #### Product Details
+![Product D](documentation/features/)  -->
 
-### Review
+### Add Multiple Durags to basket
+![Add to Basket](documentation/features/add-multiple-durags.png)
+
+### Product Admin
+
+#### Product Edit
+![Product Edit](documentation/features/edit-durag.png) 
+
+#### Product Add
+![Product Add](documentation/features/create-durag.png) 
+
+#### Product Delete
+![Product Delete](documentation/features/manage-durag-crud.png) 
+
+<!-- ### Review
 
 #### Show Review
 ![Booking Page](documentation/features/) 
 
 #### Add Review
-![Booking Page](documentation/features/) 
+![Booking Page](documentation/features/)  -->
 
 
 ### Basket
 
-### Add to Basket
-![Booking Page](documentation/features/)
+#### Show Basket
+![Show Basket](documentation/features/shopping-basket.png)
 
-### Show Basket
-![Booking Page](documentation/features/manage_reservations_user.png)
+#### Remove From Basket
+![Remove Basket](documentation/features/shopping-basket-delete.gif)
 
 #### Update Basket Qauntity
-![Booking Page](documentation/features/)
+![Basket Qauntity](documentation/features/shopping-basket-update.gif)
+
 
 
 ### Checkout
 
-### Checkout Page
-![Booking Page](documentation/features/delete_confirmation.png)
-
-### Update Checkout Items
-![Booking Page](documentation/features/update_reservation.png)
+#### Checkout Page
+![Checkout Page](documentation/features/checkout-form.gif)
 
 #### Checkout Confirmation
-![Booking Page](documentation/features/)
+![Checkout Confirmation](documentation/features/checkout-confirmation.gif)
 
 
 ### Profile
 
 #### Default Delivery Information
-![Booking Page](documentation/features/)
+![Defaul Delivery Information](documentation/features/default-delivery-information.png)
 
 #### Order History
-
+![Order History](documentation/features/order-history.png)
 
 ### Future Features
 
