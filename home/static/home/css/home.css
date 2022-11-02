@@ -9,6 +9,10 @@
   background-image: linear-gradient(to right, #007CC7, #0e1d26);
 }
 
+.event-band:hover {
+  background-image: linear-gradient(to left, #007CC7, #0e1d26);
+}
+
 .jumbotron {
   background: none; 
   margin: 0;
