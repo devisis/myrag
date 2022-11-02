@@ -52,7 +52,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
-            return redirect(reverse('view_products'))
+            return redirect(reverse('durags'))
         else:
             messages.error(request,
                            ('Failed to update product. '

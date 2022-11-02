@@ -124,6 +124,7 @@ input::-webkit-inner-spin-button {
     overflow: visible;
     margin-right: 5%;
     border: 1px solid black;
+    color: var(--clr-white);
 
 }
 
