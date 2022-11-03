@@ -50,9 +50,15 @@ home
       {% for product in products %}
       <div class="card m-1 gallery-item" style="width: 20rem;">
         <div class="embed-responsive embed-responsive-1by1">
-          <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
-            alt="{{ product.name }}">
-
+          {% if product.featured_image.url %}
+          <a href="{% url 'rag_details' product.id %}">
+            <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"
+              alt="{{ product.name }}"></a>
+          {% else %}
+          <a href="{% url 'rag_details' product.id %}">
+            <img src="{{ MEDIA_URL }}noimage.png" href="{% url 'rag_details' product.id %}"
+              class="card-img-top embed-responsive-item" alt="{{ product.name }}"></a>
+          {% endif %}
         </div>
         <div class="card-body">
           <p class="card-text text-muted">{{ product.name }}</p>
