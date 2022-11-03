@@ -14,13 +14,13 @@ profile
     <div class="row mx-3">
         <div class="col">
             <hr>
-            <h2 class="mb-3">My Profile</h2>
+            <h4 class="mb-3">My Profile</h4>
             <hr>
         </div>
     </div>
     <div class="row mx-3">
         <div class="col-12 col-md-6">
-            <h5 class="font-weight-bold my-2"> Default Delivery Information </h5>
+            <h5 class="my-2 p-2"> Default Delivery Information </h5>
             <hr>
             <form action="{% url 'profile' %}" method="POST" id="update-profile-form">
                 {% csrf_token %}
@@ -29,7 +29,7 @@ profile
             </form>
         </div>
         <div class="col-12 col-md-6">
-            <h5 class="font-weight-bold my-2"> Order History </h5>
+            <h5 class="my-2 p-2"> Order History </h5>
             <hr>
             <div class="col table-responsive rounded">
                 <table class="table table-sm table-hover table-borderless">
@@ -53,7 +53,7 @@ profile
                             </td>
                             <td>
                                 <!--  The date -->
-                                <p>{{ order.date }}</p>
+                                {{ order.date }}
                             </td>
                             <td>
                                 <ul class="list-unstyled">
@@ -66,8 +66,9 @@ profile
                             </td>
                             <td>
                                 <!--  The total -->
-                                <p>£{{ order.total }}</p>
+                                £{{ order.total }}
                             </td>
+                            <hr>
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -38,18 +38,18 @@ home
 
   <div class="row">
     <div class="col">
-      <p class="float-left lead">Browse Selection </p>
+      <p class="float-left lead">Selection </p>
       <hr>
     </div>
   </div>
 
   <div class="row">
-    <div class="container  d-flex recently-added">
+    <div class="container-fluid  d-flex recently-added">
       <!-- Create a index of product images to display a small gallery  -->
       {% if products %}
       {% for product in products %}
       <div class="card m-1 gallery-item" style="width: 20rem;">
-        <div class="embed-responsive embed-responsive-16by9">
+        <div class="embed-responsive embed-responsive-1by1">
           <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item gallery-img"
             alt="{{ product.name }}">
 

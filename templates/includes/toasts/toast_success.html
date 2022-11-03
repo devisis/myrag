@@ -8,25 +8,26 @@
   </div>
   <div class="toast-body text-center pt-0">
     <div class="row">
-      <div class="col">{{ msg }} ☺</div>
+      <div class="col">
+        <p>{{ msg }} ☺</p>
+      </div>
       <hr class="m-0">
     </div>
     {% if total and not on_profile_page %}
     <div class="basket-display-toast">
-      <p><strong>My Basket - Items({{ durag_count }})</strong></p>
+      <p>Basket &centerdot; {{ durag_count }}</p>
       {% for durag_info in basket_durags %}
       <div class="row">
         <div class="col-2">
-          {% if durag_info.durag.featured_image.url %}
-          <div class="embed-responsive embed-responsive-4by3">
-            <img src="{{ durag_info.durag.featured_image.url }}" class="w-100 embed-responsive-item"
+          <div class="embed-responsive embed-responsive-1by1">
+            {% if durag_info.durag.featured_image.url %}
+            <img class="rounded img-fluid embed-responsive-item" src="{{ durag_info.durag.featured_image.url }}"
+              alt="{{ durag_info.product.name }}">
+            {% else %}
+            <img class="rounded img-fluid embed-responsive-item" src="{{ MEDIA_URL }}noimage.png"
               alt="{{ durag_info.durag.name }}">
+            {% endif %}
           </div>
-          {% else %}
-          <div class="embed-responsive embed-responsive-4by3">
-            <img src="{{ MEDIA_URL }}noimage.png" class="w-100 embed-responsive-item" alt="{{ durag_info.durag.name }}">
-          </div>
-          {% endif %}
         </div>
         <div class="col-5">
           <p>{{ durag_info.durag.name }}</p>

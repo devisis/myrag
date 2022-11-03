@@ -1,6 +1,7 @@
 <header class="container-fluid w-100 p-0 sticky-top">
   <nav class="navbar navbar-expand-md navbar-dark p-3">
     <a class="navbar-brand m-0" href="{% url 'home' %}"><img src="https://res.cloudinary.com/dlu3hxwmb/image/upload/v1667386841/favicon-32x32_yl5ldq.png" alt="Myrag" class="w-75 h-75"></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu"
       aria-expanded="false" aria-label="Menu navigation toggle">
       <span class="navbar-toggler-icon"></span>
@@ -62,8 +63,8 @@
         </li>
         {% endif %}
         <li class="nav-item">
-          <a class="nav-link split" href="{% url 'basket' %}" aria-label="The basket page">Basket ({{ durag_count }})
-            <i class="fas fa-shopping-basket"></i>
+          <a class="nav-link split" href="{% url 'basket' %}" aria-label="The basket page">Basket 
+            <i class="fas fa-shopping-basket"> <sup>{{ durag_count }}</sup></i>
           </a>
         </li>
       </ul>
