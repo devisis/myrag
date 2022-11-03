@@ -30,7 +30,7 @@ store
       {% if product.featured_image %}
       <img src="{{ product.featured_image.url }}" class="embed-responsive-item details-img" alt="{{ product.name }}">
       {% else %}
-      <img src="{{ MEDIA_URL }}noimage.png" class="embed-responsive-item details-img" alt="{{ product.name }}">
+      <img src="{% static 'images/noimage.png' %}" class="embed-responsive-item details-img" alt="{{ product.name }}">
 
      {% endif %}
     </div>

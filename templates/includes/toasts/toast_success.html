@@ -24,7 +24,7 @@
             <img class="rounded img-fluid embed-responsive-item" src="{{ durag_info.durag.featured_image.url }}"
               alt="{{ durag_info.product.name }}">
             {% else %}
-            <img class="rounded img-fluid embed-responsive-item" src="{{ MEDIA_URL }}noimage.png"
+            <img class="rounded img-fluid embed-responsive-item" src="{% static 'images/noimage.png' %}s"
               alt="{{ durag_info.durag.name }}">
             {% endif %}
           </div>

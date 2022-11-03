@@ -47,7 +47,7 @@
                               alt="{{ durag_info.product.name }}">
                           </div>
                         {% else %}
-                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ durag_info.durag.name }}">
+                        <img src="{% static 'images/noimage.png' %}" alt="{{ durag_info.durag.name }}">
                         {% endif %}
                     </div>
                     <div class="col-3">

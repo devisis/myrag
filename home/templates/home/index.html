@@ -56,7 +56,7 @@ home
               alt="{{ product.name }}"></a>
           {% else %}
           
-            <img src="static/images/noimage.png" class="card-img-top embed-responsive-item"
+            <img src="{% static 'images/noimage.png' %}" class="card-img-top embed-responsive-item"
               alt="{{ product.name }}">
           {% endif %}
         </div>
