@@ -88,11 +88,11 @@
                             {{ order_form.postcode | as_crispy_field }}
                             <div class="float-left">
                                 {% if user.is_authenticated %}
-                                <label class="save-delivery text-warning" for="save-delivery">Save your delivery
+                                <label class="save-delivery text-warning" for="id-save-delivery">Save your delivery
                                     information to profile</label>
-                                <input type="checkbox" name="save-delivery" id="save-delivery" checked>
+                                <input type="checkbox" name="save-delivery" id="id-save-delivery" checked>
                                 {% else %}
-                                <label class="form-check-label" for="id-save-info">
+                                <label for="id-save-delivery">
                                     <strong> New User? </strong><a class="text-info"
                                         href="{% url 'account_signup' %}">Create an account.</a> <strong>Already have an
                                         account?</strong>

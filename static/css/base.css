@@ -158,6 +158,10 @@ hr {
     overflow-x: hidden;
 }
 
+.card-img-top {
+    object-fit: cover;
+}
+
 /* Footer */
 
 footer {

@@ -55,7 +55,7 @@ def checkout(request):
 
             # If user wants to save payment details redirect them
             # to checkout success page
-            request.session['save_info'] = 'save-info' in request.POST
+            request.session['save-delivery'] = 'save-delivery' in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number])
                 )
@@ -77,7 +77,21 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.default_full_name,
+                    'email': profile.user.email,
+                    'street_1': profile.default_street_1,
+                    'street_2': profile.default_street_2,
+                    'county': profile.default_county,
+                    'postcode': profile.default_postcode,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Your Stripe public key is missing. \
@@ -97,14 +111,15 @@ def checkout_success(request, order_number):
     """
     This will manage any successful checkouts
     """
-    save_info = request.session.get('save_info')
+    save_delivery = request.session.get('save_delivery')
     order = get_object_or_404(Order, order_number=order_number)
 
-    profile = UserProfile.objects.get(user=request.user)
-    order.user_profile = profile
-    order.save()
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
 
-    if save_info:
+    if save_delivery:
         profile_data = {
             'default_street_1': order.street_1,
             'default_street_2': order.street_2,
