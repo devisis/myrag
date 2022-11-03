@@ -21,7 +21,8 @@ basket
   <div class="row">
     <div class="col-12">
       <hr>
-      <h2>Shopping Basket - {{ durag_count }}</h2>
+      <h4>Basket <sup>* {{ durag_count }}</sup></h4>
+      
       <hr>
     </div>
   </div>
@@ -52,7 +53,7 @@ basket
               <td class="">
                 <!-- name of durag and image -->
                 {% if durag_info.durag.featured_image %}
-                <img class="rounded img-fluid" style="width: 100px; height: 100px; object-fit: cover;"
+                <img class="rounded img-fluid" style="width: 50px; height: 50px; object-fit: cover;"
                   src="{{ durag_info.durag.featured_image.url }}" alt="{{ durag_info.product.name }}">
                 {% else %}
                 <img class="rounded img-fluid" style="width: 100px; height: 100px; object-fit: cover;"

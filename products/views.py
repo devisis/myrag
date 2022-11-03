@@ -18,12 +18,25 @@ def view_product(request):
     return render(request, template, context)
 
 
+def rag_details(request, product_id):
+    """
+    View to show detailed rag info
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    template = 'products/rag_details.html'
+    context = {
+        'product': product,
+    }
+    return render(request, template, context)
+
+
 @login_required
 def create_product(request):
     """ Add a durag to the store """
     if request.method == 'POST':
         form = AddProductForm(request.POST, request.FILES)
-        # if the form is valid save it send a message and redirect user back to an empty form
+        # if the form is valid save it send a message
+        #  redirect user back to an empty form
         if form.is_valid():
             form.save()
             messages.success(request, 'A new durag has been added!')

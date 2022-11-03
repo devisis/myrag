@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+store
+{% endblock %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid text-center p-2 details-main">
+  <div class="row m-3">
+    <div class="col-12">
+      <hr>
+      <h4>{{ product.name }} details</h4>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center durag-details-container">
+
+    <div class="embed-responsive embed-responsive-1by1 details-img-item p-2">
+      {% if product.featured_image %}
+      <img src="{{ product.featured_image.url }}" class="embed-responsive-item details-img" alt="{{ product.name }}">
+      {% else %}
+      <img src="{{ MEDIA_URL }}noimage.png" class="embed-responsive-item details-img" alt="{{ product.name }}">
+
+     {% endif %}
+    </div>
+
+    <div class="p-2">
+      <div>
+        <hr class="m-0">
+        <p class="m-0"> {{ product.name }}</p>
+        <p> {{ product.material }}</p>
+        <p class="m-0">{{ product.description }}</p>
+        <p class="m-0">£{{ product.price }}</p>
+        <hr>
+      </div>
+      <div>
+        <form action="{% url 'add_to_basket' product.id %}" method="POST">
+          {% csrf_token %}
+          <select name="quantity" id="{{ product.pk }}_quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+          <button type="submit" class="btn btn-sm bg-success text-white small mt-1"> Add to basket</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="col">
+    {% if request.user.is_superuser %}
+    <a href="{% url 'edit_product' product.id %}" class="btn btn-md font-weight-bold bg-warning text-dark mx-2">Edit</a>
+    <a href="{% url 'delete_product' product.id %}" class="btn btn-md bg-danger font-weight-bold text-dark mx-2">Delete</a>
+  {% endif %}
+  <a href="{% url 'durags' %}" class="btn btn-md bg-info text-white font-weight-bold my-5"> Take me back</a></div>
+</div>
+{% endblock %}

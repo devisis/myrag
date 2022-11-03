@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h3>Thanks for your custom!</h3>
+            <h4>Thanks for your custom!</h4>
             <hr>
             <p>Your order information is detailed below, check your email for confirmation.</p>
         </div>
@@ -18,15 +18,15 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h4>Order Information</h4>
+            <h5>Order Information</h5>
             <hr>
             <div class="row">
-                <div class="col-12 col-sm-5 font-weight-bold">Order No. :</div>
+                <div class="col-12 col-sm-5">Order No. :</div>
                 <div class="col-12 col-sm-7 text-sm-right">{{ order.order_number }}</div>
             </div>
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">Full Name:</p>
+                    <p class="mb-0">Full Name:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">{{ order.full_name }}</p>
@@ -34,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">Email:</p>
+                    <p class="mb-0">Email:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">{{ order.email }}</p>
@@ -50,7 +50,7 @@
 
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">Address 1:</p>
+                    <p class="mb-0">Address 1:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">{{ order.street_1 }}</p>
@@ -60,7 +60,7 @@
             {% if order.street_2 %}
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">Address 2:</p>
+                    <p class="mb-0">Address 2:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">{{ order.street_1 }}</p>
@@ -71,7 +71,7 @@
             {% if order.county %}
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">County:</p>
+                    <p class="mb-0   ">County:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">{{ order.county }}</p>
@@ -82,7 +82,7 @@
             {% if order.postcode %}
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">Post Code:</p>
+                    <p class="mb-0">Post Code:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">{{ order.postcode }}</p>
@@ -100,7 +100,7 @@
             {% for item in order.lineitems.all %}
             <div class="row">
                 <div class="col-12 col-sm-5">
-                    <p class=" mb-0 font-weight-bold">
+                    <p class=" mb-0">
                         {{ item.product.name }}
                     </p>
                 </div>
@@ -112,7 +112,7 @@
             <div class="row">
                 <hr>
                 <div class="col-12 col-sm-5">
-                    <p class="mb-0  font-weight-bold">Total:</p>
+                    <p class="mb-0">Total:</p>
                 </div>
                 <div class="col-12 col-sm-7 text-sm-right">
                     <p class="mb-0">£{{ order.total }}</p>

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <hr>
-            <h2>Checkout Form</h2>
+            <h2>Checkout</h2>
             <hr>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-md-6 order-md-last">
-                <h3 class="text-center">Shopping Basket</h3>
+                <h4 class="text-center">Basket</h4>
                 <div class="row">
                     <div class="col-3 checkout-rag-img">
 
@@ -41,13 +41,13 @@
                     {% for durag_info in basket_durags %}
                     <div class="col-3 d-flex">
                         {% if durag_info.durag.featured_image.url %}
-                        <div class="embed-responsive embed-responsive-4by3">
+                        <div class="embed-responsive embed-responsive-1by1">
                             <img class="rounded img-fluid embed-responsive-item"
                               src="{{ durag_info.durag.featured_image.url }}"
                               alt="{{ durag_info.product.name }}">
                           </div>
                         {% else %}
-                        <img src="#" alt="{{ durag_info.durag.name }}">
+                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ durag_info.durag.name }}">
                         {% endif %}
                     </div>
                     <div class="col-3">
