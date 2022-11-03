@@ -1,0 +1,11 @@
+Dear {{ form_context.name }},
+
+Thank you for your recent order! You'll be receiving your very own myrag shortly!
+
+Order Summary:
+Order Number - {{ form_context.order_number }}
+Total - £{{ form_context.total }}
+
+Regards,
+
+Myrag

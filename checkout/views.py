@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -133,6 +135,21 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successful! \
         Your order number: {order_number}. Check {order.email} \
         for a confirmation email.')
+
+    form_context = {
+        "name": order.user_profile.default_full_name,
+        "order_number": order_number,
+        "total": order.total,
+    }
+    send_mail(
+        "Myrag Order Confirmation",
+        render_to_string(
+            "checkout/emails/order_confirmation_email.txt",
+            {"form_context": form_context}
+        ),
+        settings.DEFAULT_FROM_EMAIL,
+        [order.email],
+    )
 
     if 'basket' in request.session:
         # delete users basket from session as it is no longer needed
