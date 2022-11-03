@@ -55,9 +55,9 @@ home
             <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"
               alt="{{ product.name }}"></a>
           {% else %}
-          <a href="{% url 'rag_details' product.id %}">
-            <img src="{{ MEDIA_URL }}noimage.png" href="{% url 'rag_details' product.id %}"
-              class="card-img-top embed-responsive-item" alt="{{ product.name }}"></a>
+          
+            <img src="static/images/noimage.png" class="card-img-top embed-responsive-item"
+              alt="{{ product.name }}">
           {% endif %}
         </div>
         <div class="card-body">
