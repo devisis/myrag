@@ -3,7 +3,7 @@ from django.shortcuts import (
 )
 from django.contrib import messages
 
-from products.views import view_product
+from products.views import view_product, rag_details
 from products.models import Product
 
 
@@ -31,7 +31,7 @@ def add_to_basket(request, durag_id):
             request, f'Added {durag.name} to your basket')
 
     request.session['basket'] = basket
-    return redirect(view_product)
+    return redirect('rag_details', durag_id)
 
 
 def update_basket(request, durag_id):
