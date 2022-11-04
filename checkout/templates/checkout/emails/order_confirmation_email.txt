@@ -8,4 +8,4 @@ Total - £{{ form_context.total }}
 
 Regards,
 
-Myrag
+Myrag Team
