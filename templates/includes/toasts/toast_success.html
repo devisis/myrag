@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-delay="4000">
   <div class="toast-status-bar bg-success"></div>
   <div class="toast-header p-0">
@@ -24,7 +26,7 @@
             <img class="rounded img-fluid embed-responsive-item" src="{{ durag_info.durag.featured_image.url }}"
               alt="{{ durag_info.product.name }}">
             {% else %}
-            <img class="rounded img-fluid embed-responsive-item" src="{% static 'images/noimage.png' %}s"
+            <img class="rounded img-fluid embed-responsive-item" src="{% static 'images/noimage.png' %}"
               alt="{{ durag_info.durag.name }}">
             {% endif %}
           </div>
