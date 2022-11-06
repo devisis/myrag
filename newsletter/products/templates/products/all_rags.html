@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+store
+{% endblock %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid text-center p-2 products-main">
+  <div class="row m-3">
+    <div class="col-12">
+      {% if request.user.is_superuser %}
+      <hr>
+      <h4>Manage</h4>
+      {% else %}
+      <h4>Shop</h4>
+      {% endif %}
+      <hr class="color-success">
+    </div>
+  </div>
+  {% if request.user.is_superuser %}
+  <div class="row">
+    <div class="col small">
+      <a href="{% url 'create_product' %}" class="btn btn-info">Add New Durag</a>
+      <a href="#" class="btn btn-danger m-3">Delete All Durags</a>
+    </div>
+  </div>
+  {% endif %}
+  <div class="row d-flex justify-content-center durag-display-main">
+    {% for product in products %}
+    <div class="card products-main-card" style="width: 12rem;">
+
+      <div class="embed-responsive embed-responsive-1by1">
+        {% if product.featured_image.url %}
+        <a href="{% url 'rag_details' product.id %}">
+          <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"
+            alt="{{ product.name }}"></a>
+        {% else %}
+        <a href="{% url 'rag_details' product.id %}">
+          <img src="{% static 'images/noimage.png' %}" href="{% url 'rag_details' product.id %}"
+            class="card-img-top embed-responsive-item" alt="{{ product.name }}"></a>
+        {% endif %}
+      </div>
+      {% if request.user.is_superuser %}
+      <div class="small">
+        <a href="{% url 'edit_product' product.id %}" class="text-warning">Edit</a> &centerdot;
+        <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+      </div>
+      {% endif %}
+      <div class="p-1">
+        <hr class="m-0">
+        <p class="card-title lead m-0"> {{ product.name }}</p>
+        <p class="card-text small m-0">£{{ product.price }}</p>
+        <hr>
+        <a href="{% url 'rag_details' product.id %}" class="btn btn-sm text-success small mt-1"> More Details</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

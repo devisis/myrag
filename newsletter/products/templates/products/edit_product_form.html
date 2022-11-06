@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}
+edit durag
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h4 class="m-4 text-center">Editing - {{ product.name }}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 mx-auto">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="edit-product-form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
+                <a href="{% url 'durags' %}" class="btn btn-info">Go Back and Cancel</a>
+                <button type="submit" class="btn btn-success">Update Rag</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

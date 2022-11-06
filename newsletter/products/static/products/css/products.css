@@ -1,0 +1,31 @@
+.products-main-card {
+    background-color: var(--clr-dark);
+    border-radius: 3px;
+}
+
+.products-main-card:hover {
+    background-color: var(--secondary-blue);
+    height: 100%;
+}
+
+.text-white {
+    color: black;
+}
+
+.durag-display-main {
+    width: 100%;
+    height: 75%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--tertiary-blue);
+}
+
+.details-img-item {
+    width: 300px;
+    height: 300px;
+}
+
+.details-img {
+    width: 25%;
+    height: 25%;
+}
