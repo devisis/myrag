@@ -31,14 +31,15 @@ store
   <div class="row">
     <div class="col small">
       <a href="{% url 'create_product' %}" class="btn btn-info">Add New Durag</a>
-      <a href="#" class="btn btn-danger m-3">Delete All Durags</a>
     </div>
   </div>
   {% endif %}
   <div class="row d-flex justify-content-center durag-display-main">
     {% for product in products %}
     <div class="card products-main-card" style="width: 12rem;">
-
+      {% if request.user.is_superuser %}
+      <a href="{% url 'delete_product' product.id %}" class="text-danger large" aria-label="delete product"><i class="far fa-trash-alt"></i></a>
+      {% endif %}
       <div class="embed-responsive embed-responsive-1by1">
         {% if product.featured_image.url %}
         <a href="{% url 'rag_details' product.id %}">
@@ -51,17 +52,14 @@ store
         {% endif %}
       </div>
       {% if request.user.is_superuser %}
-      <div class="small">
-        <a href="{% url 'edit_product' product.id %}" class="text-warning">Edit</a> &centerdot;
-        <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
-      </div>
+        <a href="{% url 'edit_product' product.id %}" class="text-warning large" aria-label="edit product"><i class="far fa-edit"></i></a>
       {% endif %}
       <div class="p-1">
         <hr class="m-0">
         <p class="card-title lead m-0"> {{ product.name }}</p>
         <p class="card-text small m-0">£{{ product.price }}</p>
-        <hr>
         <a href="{% url 'rag_details' product.id %}" class="btn btn-sm text-success small mt-1"> More Details</a>
+        <hr>
       </div>
     </div>
     {% endfor %}

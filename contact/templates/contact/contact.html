@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load basket_tools %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
@@ -21,18 +20,19 @@ contact
             <hr>
             <h4>Contact Us</h4>
             <hr>
+            <p>Have a question for us? Ask here.</p><br>
         </div>
     </div>
-    <div class="row d-flex justify-content-center py-4">
-        <p>Have a question? Ask here.</p>
-        <form action="" method="POST">
-            
-        </form>
-    </div>
-    <div class="row d-flex justify-content-center py-4">
-        <a class="btn btn-info"><i class="fab fa-facebook social">Facebook</i></a>
-        <a class="btn btn-info">Email Us</a>
-        <a class="btn btn-info">Call Us </a>
-
-    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <!-- Contact Us Form -->
+            <form action="#" method="POST">
+                {% csrf_token %}
+                {{ contact_form.name | as_crispy_field }}
+                {{ contact_form.email | as_crispy_field }}
+                {{ contact_form.description | as_crispy_field }}
+                <button type="submit" class="btn btn btn-success w-100">Send</button>
+            </form>
+        </div>
+</div>
 {% endblock %}
