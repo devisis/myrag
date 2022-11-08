@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from products.models import Newsletter
+from newsletter.models import Newsletter
 from .forms import NewsletterForm
 
 
