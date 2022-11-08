@@ -17,7 +17,7 @@ def newsletter(request):
 
     template = 'newsletter/newsletter.html'
     context = {
-        'newsletter_form': products,
+        'newsletter_form': newsletter_form,
     }
 
     return render(request, template, context)
