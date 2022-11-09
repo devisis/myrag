@@ -23,7 +23,7 @@ store
     {% endif %}
     <div class="col-12">
       <hr>
-      <h4>{{ product.name }} details</h4>
+      <h4>{{ product.name }}</h4>
       <hr>
     </div>
   </div>
@@ -41,10 +41,11 @@ store
     <div class="p-2">
       <div>
         <hr class="m-0">
-        <p class="m-0"> {{ product.name }}</p>
-        <p> {{ product.material }}</p>
-        <p class="m-0">{{ product.description }}</p>
-        <p class="m-0">£{{ product.price }}</p>
+        <p class="m-0 d-inline"> {{ product.color }}</p> &middot;
+        <p class="m-0 d-inline"> {{ product.material }}</p> &middot;
+        <p class="d-inline"> {{ product.style }}</p>
+        <p class="m-2">{{ product.description }}</p>
+        <p>£{{ product.price }}</p>
         <hr>
       </div>
       <div>

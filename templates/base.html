@@ -9,6 +9,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Myrag is a online store displaying a range of silk and satin colorful durags.">
+  <meta name="keywords" content="durag, online shop, headwrap, uk, clothing, hats, england, london, myrag, silk, satin">
   {% endblock %}
 
   {% block extra_meta %}
@@ -45,32 +47,32 @@
 </head>
 
 <body>
-    <div id="main">
+  <div id="main">
 
-  {% include 'includes/main-nav.html' %}
+    {% include 'includes/main-nav.html' %}
 
-  {% if messages %}
-  <div class="toast-container" id="alerts">
-    {% for msg in messages %}
-    {% with msg.level as level %}
-    {% if level == 40 %}
-    {% include 'includes/toasts/toast_error.html' %}
-    {% elif level == 30 %}
-    {% include 'includes/toasts/toast_warning.html' %}
-    {% elif level == 25 %}
-    {% include 'includes/toasts/toast_success.html' %}
-    {% else %}
-    {% include 'includes/toasts/toast_info.html' %}
+    {% if messages %}
+    <div class="toast-container" id="alerts">
+      {% for msg in messages %}
+      {% with msg.level as level %}
+      {% if level == 40 %}
+      {% include 'includes/toasts/toast_error.html' %}
+      {% elif level == 30 %}
+      {% include 'includes/toasts/toast_warning.html' %}
+      {% elif level == 25 %}
+      {% include 'includes/toasts/toast_success.html' %}
+      {% else %}
+      {% include 'includes/toasts/toast_info.html' %}
+      {% endif %}
+      {% endwith %}
+      {% endfor %}
+    </div>
     {% endif %}
-    {% endwith %}
-    {% endfor %}
-  </div>
-  {% endif %}
 
-  {% block page_header %}
-  {% endblock %}
-  {% block content %}
-  {% endblock %}
+    {% block page_header %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
   </div>
   <footer class="container-fluid">
 
@@ -95,8 +97,8 @@
         <ul>
           <h6 aria-label="Useful links">Socials:</h6>
           <li class="list-item">
-            <a href="https://www.facebook.com/profile.php?id=100087511539538" class="btn-floating btn-lg" aria-label="Facebook link"
-              target="_blank" rel="nofollow">
+            <a href="https://www.facebook.com/profile.php?id=100087511539538" class="btn-floating btn-lg"
+              aria-label="Facebook link" target="_blank" rel="nofollow">
               <i class="fab fa-facebook social"></i>
             </a>
           </li>
