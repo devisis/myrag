@@ -85,10 +85,10 @@ basket
 
       <div class="row p-2">
         <div class="col">
-          <a href="{% url 'durags' %}" class="btn btn-info mr-4 ">
+          <a href="{% url 'durags' %}" class="btn btn-info mr-4" rel="prev">
             Keep Looking
           </a>
-          <a href="{% url 'checkout' %}" class="btn btn-success ml-4">
+          <a href="{% url 'checkout' %}" class="btn btn-success ml-4" rel="next">
             Secure Checkout
           </a>
         </div>
@@ -97,7 +97,7 @@ basket
       <div class="row">
         <div class="col">
           <p class="bold lead">Your shopping basket is <strong>empty</strong>.</p>
-          <a href="{% url 'durags' %}" class="btn btn-outline text-white btn-md"><h4><u>View Durags</u></h4></a>
+          <a href="{% url 'durags' %}" class="btn btn-outline text-white btn-md" rel="prev"><h4><u>View Durags</u></h4></a>
         </div>
       </div>
       {% endif %}
