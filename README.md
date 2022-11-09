@@ -256,6 +256,7 @@ ss
 - [Google Fonts](https://fonts.google.com/) was used to select fonts for the website.
 - [Coolers](https://coolors.co/) was used as inspiration when selecting color combinations for the website.
 - [Draw.io](https://app.diagrams.net/) was used to construct my erd.
+- [XML-Sitemaps](https://www.xml-sitemaps.com/) was used to create my sitemap.
 
 
 ## Testing

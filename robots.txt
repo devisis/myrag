@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /checkout/
+Disallow: /basket/
+Sitemap:https://myrag.herokuapp.com/sitemap.xml
