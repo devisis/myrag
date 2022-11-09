@@ -1,17 +1,7 @@
 # Myrag
 
 ## Introduction
-Myrag is a custom headwrap/durag website. The name plays on the item of focus - durag, and aims to help the end user feel a personal connection to the item. 
-
-## UX
-
-### Strategy
-
-### Methodology - Agile
-
-I decided to take an agile approach for the construction of my site. I made use of the projects section on GitHub, to impliments a MoSCoW prioritization technique.
-I molded a user story template and used this to create, and organise my user stories into 3 seperate lists. Lists which defined where each user story was, in terms of progress.
-To-do, in progress and done, all adequately named for the goal at hand.
+Myrag is a custom headwrap/durag website. The name plays on the item of focus - durag, and aims to help the end user feel a personal connection to the item.
 
 ### Site Owner Goal
 Make a profit through the sale of headwraps using this website and to build a community of users.
@@ -22,20 +12,21 @@ Find out more information about these custom headwraps and make an informed purc
 ### User Stories
 
 ### View & Navigation
+
 ![Desktop View](documentation/epics/view-navigation-us.png)
 
 ### Registration & User Accounts
+
 ![Desktop View](documentation/epics/registration-useraccounts-us.png)
 
 ### Customisation
+
 ![Desktop View](documentation/epics/customisation-us.png)
 
 ### Purchasing & Ceckout
+
 ![Desktop View](documentation/epics/purchasing-checkout-us.png)
 
-
-### Entity Relationship Diagram
-ss
 
 ### Wireframes
 
@@ -106,12 +97,37 @@ ss
 ![Mobile View](documentation/wireframes/gallery-upload.png)
 
 
+### Entity Relationship Diagram
+
+![ERD](documentation/wireframes/erd.png)
+
+
+### Methodology - Agile
+
+I decided to take an agile approach for the construction of my site. I made use of the projects section on GitHub, to impliments a MoSCoW prioritization technique.
+I molded a user story template and used this to create, and organise my user stories into 3 seperate lists. Lists which defined where each user story was, in terms of progress.
+To-do, in progress and done, all adequately named for the goal at hand.
+
+![Projects Board](documentation/wireframes/projects-board.png)
+
+
+### SEO & Marketing
+
+#### FB Mockup
+
+I created a facebook page for fans of myrag to have a space to communicate questions and find out more information.
+
+![Facebook page myrag](documentation/marketing/myrag-fb-page.png)
+
+
+#### Sitemap & Robots
+
 
 ## Design
 
 ### Color Scheme
 
-ss color pallet
+![Color pallet](documentation/features/color-palette.png)
 
 I wanted the background to have dark but positive colours. I explored this by using lighter and darker blues throughout the website. This was to give the product images the ambience needed to thrive and take center stage.
 
@@ -120,7 +136,6 @@ I wanted the background to have dark but positive colours. I explored this by us
 
 I went on google fonts and browsed through a selection of fonts. I used a variety of sample text to have visual comparison and settled on what I found to be a sleek font for the headings of my webpages and a tidy font for the data.
 
-ss
 
 ### CRUD Functionality
 
@@ -135,15 +150,6 @@ ss
 - The user has the ability to delete and item from their basket.
 - The user has the ability to add an item to their basket.
 
-
-### SEO & Marketing
-
-#### FB Mockup
-
-#### Sitemap & Robots
-
-
- 
 
 ## Features 
 
@@ -218,7 +224,6 @@ ss
 
 #### Update Basket Qauntity
 ![Basket Qauntity](documentation/features/shopping-basket-update.gif)
-
 
 
 ### Checkout
