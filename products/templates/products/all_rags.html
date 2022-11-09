@@ -18,8 +18,8 @@ store
 <div class="container-fluid text-center p-2 products-main">
   <div class="row m-3">
     <div class="col-12">
-      {% if request.user.is_superuser %}
       <hr>
+      {% if request.user.is_superuser %}
       <h4>Manage</h4>
       {% else %}
       <h4>Shop</h4>
@@ -34,9 +34,9 @@ store
     </div>
   </div>
   {% endif %}
-  <div class="row d-flex justify-content-center durag-display-main">
+  <div class="row justify-content-center durag-display-main">
     {% for product in products %}
-    <div class="card products-main-card" style="width: 12rem;">
+    <div class="card products-main-card m-1" style="width: 12rem;">
       {% if request.user.is_superuser %}
       <a href="{% url 'delete_product' product.id %}" class="text-danger large" aria-label="delete product"><i class="far fa-trash-alt"></i></a>
       {% endif %}
@@ -52,14 +52,12 @@ store
         {% endif %}
       </div>
       {% if request.user.is_superuser %}
-        <a href="{% url 'edit_product' product.id %}" class="text-warning large" aria-label="edit product"><i class="far fa-edit"></i></a>
+        <a href="{% url 'edit_product' product.id %}" class="text-warning large mb-1" aria-label="edit product"><i class="far fa-edit"></i></a>
       {% endif %}
-      <div class="p-1">
-        <hr class="m-0">
-        <p class="card-title lead m-0"> {{ product.name }}</p>
+      <div class="p-1 ">
+        <p class="card-title m-0"> {{ product.name }}</p>
         <p class="card-text small m-0">£{{ product.price }}</p>
         <a href="{% url 'rag_details' product.id %}" class="btn btn-sm text-success small mt-1"> More Details</a>
-        <hr>
       </div>
     </div>
     {% endfor %}

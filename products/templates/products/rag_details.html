@@ -18,7 +18,8 @@ store
 <div class="container-fluid text-center p-2 details-main">
   <div class="row m-3">
     {% if request.user.is_superuser %}
-    <a href="{% url 'delete_product' product.id %}" class=" text-danger font-weight-bold large"><i class="far fa-trash-alt"></i></a>
+    <a href="{% url 'delete_product' product.id %}" class="text-danger font-weight-bold large"><i
+        class="far fa-trash-alt"></i></a>
     {% endif %}
     <div class="col-12">
       <hr>
@@ -34,8 +35,7 @@ store
       <img src="{{ product.featured_image.url }}" class="embed-responsive-item details-img" alt="{{ product.name }}">
       {% else %}
       <img src="{% static 'images/noimage.png' %}" class="embed-responsive-item details-img" alt="{{ product.name }}">
-
-     {% endif %}
+      {% endif %}
     </div>
 
     <div class="p-2">
@@ -58,7 +58,8 @@ store
           </select>
           <button type="submit" class="btn btn-sm bg-success text-white small mt-1"> Add to basket</button>
           {% if request.user.is_superuser %}
-          <a href="{% url 'edit_product' product.id %}" class="font-weight-bold large text-warning mx-2"><i class="far fa-edit"></i></a>
+          <a href="{% url 'edit_product' product.id %}" class="font-weight-bold large text-warning mx-2"><i
+              class="far fa-edit"></i></a>
           {% endif %}
         </form>
 
@@ -67,8 +68,10 @@ store
   </div>
   <hr>
   <div class="col">
-    {% if request.user.is_superuser %}
-  {% endif %}
-  <a href="{% url 'durags' %}" class="btn btn-md bg-info text-white  my-5"> Take me back</a></div>
+    <a href="{% url 'durags' %}" class="btn btn-md bg-info text-white  my-5">Take me back</a>
+    {% if basket_durags %}
+    <a href="{% url 'basket' %}" class="btn btn-md bg-success text-white  my-5"> View Basket</a>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}
