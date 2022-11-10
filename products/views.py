@@ -42,7 +42,10 @@ def create_product(request):
             messages.success(request, 'A new durag has been added!')
             return redirect(reverse('create_product'))
         else:
-            messages.error(request, 'Failed to add a new durag. Check form is valid.')
+            messages.error(
+                request,
+                'Failed to add a new durag. Check form is valid.'
+            )
     else:
         form = AddProductForm()
 
@@ -61,7 +64,7 @@ def edit_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = AddProductForm(request.POST, request.FILES, instance=product)
-        # if the form is valid add success message and redirect to all durag page
+        # if form valid add success message & redirect to all durag page
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
@@ -88,12 +91,4 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Durags deleted!')
-    return redirect(reverse('durags'))
-
-
-def delete_all_products(request):
-    """Delete all durags """
-    products = Products.object.all()
-    products.delete()
-    messages.success(request, 'All durags deleted!')
     return redirect(reverse('durags'))

@@ -14,11 +14,11 @@
         </li>
         {% if request.user.is_superuser %}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" href="#" id="navbarMenuAdmin" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Durags
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarMenu">
+          <div class="dropdown-menu" aria-labelledby="navbarMenuAdmin">
             <a class="dropdown-item" href="{% url 'durags' %}" aria-label="View all durags">All Durags</a>
             <a href="{% url 'create_product' %}" class="dropdown-item">Add New Durag</a>
           </div>

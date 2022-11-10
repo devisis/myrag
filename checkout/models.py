@@ -9,7 +9,10 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
+    user_profile = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL,
+        null=True, blank=True, related_name='orders'
+    )
     order_number = models.CharField(max_length=40, null=False, editable=False)
     date = models.DateTimeField(auto_now_add=True)
     full_name = models.CharField(max_length=120, null=False, blank=False)
