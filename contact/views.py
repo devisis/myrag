@@ -11,6 +11,7 @@ def contact(request):
     contact_form = ContactForm(request.POST or None)
     if request.method == 'POST':
         if contact_form.is_valid():
+            contact_form.save()
             messages.info(
                 request, 'Thank you for your feedback.')
             return redirect(reverse('contact'))

@@ -52,7 +52,7 @@ basket
             <tr>
               <td class="">
                 <!-- name of durag and image -->
-                {% if durag_info.durag.featured_image %}
+                {% if 'placeholder' not in durag_info.durag.featured_image.url %}
                 <img class="rounded img-fluid" style="width: 50px; height: 50px; object-fit: cover;"
                   src="{{ durag_info.durag.featured_image.url }}" alt="{{ durag_info.product.name }}">
                 {% else %}
@@ -70,7 +70,7 @@ basket
 
               <td>
                 <!-- durag quantity -->
-                {% include 'includes/update_form.html' %}
+                {% include 'basket/includes/update_form.html' %}
               </td>
 
               <td>
@@ -112,7 +112,7 @@ basket
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'includes/quantity_input_script.html' %}
+{% include 'basket/includes/quantity_input_script.html' %}
 <script>
   // update quantity link
   $('.update-basket').click(function (e) {

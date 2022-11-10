@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-2">
           <div class="embed-responsive embed-responsive-1by1">
-            {% if durag_info.durag.featured_image.url %}
+            {% if 'placeholder' not in durag_info.durag.featured_image.url %}
             <img class="rounded img-fluid embed-responsive-item" src="{{ durag_info.durag.featured_image.url }}"
               alt="{{ durag_info.product.name }}">
             {% else %}

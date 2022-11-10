@@ -50,17 +50,18 @@ home
       {% for product in products %}
       <div class="card m-1 gallery-item" style="width: 20rem;">
         <div class="embed-responsive embed-responsive-1by1">
-          {% if product.featured_image.url %}
           <a href="{% url 'rag_details' product.id %}">
+            {% if 'placeholder' not in product.featured_image.url %}
             <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"
-              alt="{{ product.name }}"></a>
-          {% else %}
+              alt="{{ product.name }}">
+            {% else %}
             <img src="{% static 'images/noimage.png' %}" class="card-img-top embed-responsive-item"
               alt="{{ product.name }}">
-          {% endif %}
+            {% endif %}
+          </a>
         </div>
         <div class="card-body">
-          <p class="card-text text-muted">{{ product.name }}</p>
+          <p class="card-text">{{ product.name }}</p>
         </div>
       </div>
       {% endfor %}

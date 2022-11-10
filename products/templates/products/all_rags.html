@@ -38,10 +38,11 @@ store
     {% for product in products %}
     <div class="card products-main-card m-1" style="width: 12rem;">
       {% if request.user.is_superuser %}
-      <a href="{% url 'delete_product' product.id %}" class="text-danger large" aria-label="delete product"><i class="far fa-trash-alt"></i></a>
+      <a href="{% url 'delete_product' product.id %}" class="text-danger large" aria-label="delete product"><i
+          class="far fa-trash-alt"></i></a>
       {% endif %}
       <div class="embed-responsive embed-responsive-1by1">
-        {% if product.featured_image.url %}
+        {% if 'placeholder' not in product.featured_image.url %}
         <a href="{% url 'rag_details' product.id %}">
           <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"
             alt="{{ product.name }}"></a>
@@ -52,7 +53,8 @@ store
         {% endif %}
       </div>
       {% if request.user.is_superuser %}
-        <a href="{% url 'edit_product' product.id %}" class="text-warning large mb-1" aria-label="edit product"><i class="far fa-edit"></i></a>
+      <a href="{% url 'edit_product' product.id %}" class="text-warning large mb-1" aria-label="edit product"><i
+          class="far fa-edit"></i></a>
       {% endif %}
       <div class="p-1 ">
         <p class="card-title m-0"> {{ product.name }}</p>

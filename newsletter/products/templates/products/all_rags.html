@@ -40,7 +40,7 @@ store
     <div class="card products-main-card" style="width: 12rem;">
 
       <div class="embed-responsive embed-responsive-1by1">
-        {% if product.featured_image.url %}
+        {% if 'placeholder' not in product.featured_image.url %}
         <a href="{% url 'rag_details' product.id %}">
           <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"
             alt="{{ product.name }}"></a>

@@ -31,7 +31,7 @@ store
   <div class="row d-flex justify-content-center durag-details-container">
 
     <div class="embed-responsive embed-responsive-1by1 details-img-item p-2">
-      {% if product.featured_image %}
+      {% if 'placeholder' not in product.featured_image.url %}
       <img src="{{ product.featured_image.url }}" class="embed-responsive-item details-img" alt="{{ product.name }}">
       {% else %}
       <img src="{% static 'images/noimage.png' %}" class="embed-responsive-item details-img" alt="{{ product.name }}">

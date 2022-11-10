@@ -40,7 +40,7 @@
                 <div class="row">
                     {% for durag_info in basket_durags %}
                     <div class="col-3 d-flex">
-                        {% if durag_info.durag.featured_image.url %}
+                        {% if 'placeholder' not in durag_info.durag.featured_image.url %}
                         <div class="embed-responsive embed-responsive-1by1">
                             <img class="rounded img-fluid embed-responsive-item"
                               src="{{ durag_info.durag.featured_image.url }}"
