@@ -21,7 +21,7 @@ I checked all my templates for html errors using [Nu Html Checker](https://valid
 ![contact](documentation/testing/html/home.png)
 
 #### Newsletter
-![newsletter](documentation/testing/html/home.png)
+![newsletter](documentation/testing/html/newsletter.png)
 
 #### All Durags
 ![all durags](documentation/testing/html/all-durags.png)

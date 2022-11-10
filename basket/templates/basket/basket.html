@@ -113,7 +113,7 @@ basket
 {% block postloadjs %}
 {{ block.super }}
 {% include 'includes/quantity_input_script.html' %}
-<script type="text/javascript">
+<script>
   // update quantity link
   $('.update-basket').click(function (e) {
     var form = $(this).prev('.update-form');
