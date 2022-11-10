@@ -32,68 +32,55 @@ Find out more information about these custom headwraps and make an informed purc
 
 #### Main Page
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/main.png)
 
 #### Colour Customisation
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/color-custom.png)
 
 #### Material Customisation
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/material-custom.png)
 
 #### Custom Message
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/message-custom.png)
  
 #### Gallery
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/gallery.png)
  
 #### FAQ & Delivery
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/faq-delivery.png)
  
 #### Register
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/register.png)
  
 #### Sign in
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/sign-in.png)
  
 #### Profile Information & Card Details
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/profile.png)
  
 #### Order History
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/order-history.png)
  
 #### Customer Reviews
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/see-reviews.png)
 ![Mobile View](documentation/wireframes/write-reviews.png)
  
 #### Order List
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/order-list.png)
  
 #### Upload to gallery
 
-![Desktop View](documentation/wireframes/)
 ![Mobile View](documentation/wireframes/gallery-upload.png)
 
 
@@ -270,6 +257,11 @@ To view all testing documentation please refer to [TESTING.md](TESTING.md)
 
 ## Deployment
 
+### Gmail
+
+### Environ Variables
+<!-- Create env.py
+list variables -->
 ### Cloudinary
 
 ### Stripe 
@@ -288,6 +280,7 @@ Scroll up and head to the "Deploy" section to choose deployment method. Select "
 - Scroll down to the manual deploy option and select "Deploy Branch".
 - The app will now be built. Once completed a 'Your App Was Successfully Deployed' message and a link will appear.
 
+<!-- list env variables and config vars heroku needs -->
 ### Local Deployment
 
 To make a local copy of this project, you can clone it by typing the following in your IDE terminal:
@@ -308,6 +301,9 @@ Additionally, Heroku will require a `Procfile`, so you can type:
 - `echo web: node index.js > Procfile`
 
 ## Credits
+https://images.unsplash.com/photo-1588704428799-7e0aa46c45cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGR1cmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60
+
+https://images.unsplash.com/photo-1521129334744-e49785eaf335?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60
 links - inspiration - 
 
 ## Acknowledgements
