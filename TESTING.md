@@ -13,29 +13,49 @@ combination of readme bullet points with features screenshots
 
 ### HTML
 
-[Nu Html Checker](https://validator.w3.org/)
+I checked all my templates for html errors using [Nu Html Checker](https://validator.w3.org/). These are the page errors before I proceeded to fix them.
 
 #### Homepage
+![home](documentation/testing/html/home.png)
+#### Contact
+![contact](documentation/testing/html/home.png)
 
-![home]()
-![contact]()
-![newsletter]()
-![all durags]()
-![durag details]()
-![edit durag]()
-![create durag]()
-![basket]()
-![checkout]()
-![chekout success]()
-![profile]()
-![register]()
-![login]()
-![logout]()
+#### Newsletter
+![newsletter](documentation/testing/html/home.png)
 
-Upon initial testing of my html I had a few issues with nesting and my head element being in the wrong place. I have fixed these issues to the best of my knowledge. 
+#### All Durags
+![all durags](documentation/testing/html/all-durags.png)
 
-![After fixes](documentation/testing/html_validation.png)
-![Initial testing](documentation/testing/initial_html_testing.png)
+#### Durag Details
+![durag details](documentation/testing/html/durag-details.png)
+
+#### Edit Durag
+![edit durag](documentation/testing/html/edit-durag.png)
+
+#### Create Durag
+![create durag](documentation/testing/html/edit-durag.png)
+
+#### Basket
+![basket](documentation/testing/html/basket.png)
+
+#### Checkout
+![checkout](documentation/testing/html/checkout.png)
+
+#### Checkout Success
+![chekout success](documentation/testing/html/checkout-success.png)
+
+#### Profile
+![profile](documentation/testing/html/profile.png)
+
+#### Register
+![register](documentation/testing/html/register.png)
+
+#### Login
+![login](documentation/testing/html/login.png)
+
+#### Logout
+![logout](documentation/testing/html/logout.png)
+
 
 ### CSS 
 
