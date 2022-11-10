@@ -14,7 +14,23 @@ combination of readme bullet points with features screenshots
 ### HTML
 
 [Nu Html Checker](https://validator.w3.org/)
-[rocketvalidator](https://rocketvalidator.com/)
+
+#### Homepage
+
+![home]()
+![contact]()
+![newsletter]()
+![all durags]()
+![durag details]()
+![edit durag]()
+![create durag]()
+![basket]()
+![checkout]()
+![chekout success]()
+![profile]()
+![register]()
+![login]()
+![logout]()
 
 Upon initial testing of my html I had a few issues with nesting and my head element being in the wrong place. I have fixed these issues to the best of my knowledge. 
 
