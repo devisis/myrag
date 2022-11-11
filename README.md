@@ -23,7 +23,7 @@ Find out more information about these custom headwraps and make an informed secu
 
 ![Desktop View](documentation/epics/customisation-us.png)
 
-### Purchasing & Ceckout
+### Purchasing & Checkout
 
 ![Desktop View](documentation/epics/purchasing-checkout-us.png)
 
@@ -121,7 +121,7 @@ I wanted the background to have dark but positive colours. I explored this by us
 
 ### Font Choice
 
-I went on google fonts and browsed through a selection of fonts. I used a variety of sample text to have visual comparison and settled on what I found to be a sleek font for the headings of my webpages and a tidy font for the data.
+I went on google fonts and browsed through a selection of fonts. I used a variety of sample text to have visual comparison and settled on what I found to be a sleek font for the headings (Prata) of my webpages and a tidy font (Lato) for the data. 
 
 
 ### CRUD Functionality
@@ -249,35 +249,6 @@ To view all testing documentation please refer to [TESTING.md](TESTING.md)
 
 ## Deployment
 
-### Gmail Email Variables
-- Login/Create gmail account
-- Navigate to see all settings after clicking on the settings cog.
-- Navigate to accounts and import then other google account settings.
-- Navigate to security found on the side menu and follow the two step verification instructions.
-- Navigate to security app passwords, select mail, select device.
-- Select other then write django as the title then copy app password. This will be your EMAIL_HOST_PASS.
-- Your EMAIL_HOST_USER is your gmail address.
-
-### Environ Variables
-<!-- Create env.py
-list variables -->
-- Create env.py file.
-- Set up these Variables
-    - DATABASE_URL (Obtained from heroku)
-    - CLOUDINARY_URL (Obtained from cloudinary dashboard once signed up)
-    - SECRET_KEY (This is a key made by yourself)
-    - DEVELOPMENT
-    - SECRET_KEY
-    - STRIPE_PUBLIC_KEY
-    - STRIPE_SECRET_KEY
-
-### Stripe Keys
-- Sign up and navigate to the developers tab where you will see API Keys.
-- Copy STRIPE_PUBLIC_KEY & STRIPE_SECRET_KEY
-
-### Cloudinary
-
-
 ### Heroku
 The site was deployed using [Heroku](https://heroku.com/). The app can be found using this link - [Myrag](https://myrag.herokuapp.com/).
 
@@ -292,7 +263,50 @@ Scroll up and head to the "Deploy" section to choose deployment method. Select "
 - Scroll down to the manual deploy option and select "Deploy Branch".
 - The app will now be built. Once completed a 'Your App Was Successfully Deployed' message and a link will appear.
 
-<!-- list env variables and config vars heroku needs -->
+Make sure you set up these config vars.
+- CLOUDINARY_URL
+- DATABASE_URL
+- EMAIL_HOST_PASS
+- EMAIL_HOST_USER
+- SECRET_KEY
+- STRIPE_PUBLIC_KEY
+- STRIPE_SECRET_KEY
+
+### Environ Variables
+- Create env.py file.
+This file will contain all your keys and database settings.
+- Set up these Variables
+    - DATABASE_URL (Obtained from heroku)
+    - CLOUDINARY_URL (Obtained from cloudinary dashboard once signed up)
+    - SECRET_KEY (This is a key made by yourself)
+    - DEVELOPMENT
+    - SECRET_KEY
+    - STRIPE_PUBLIC_KEY
+    - STRIPE_SECRET_KEY
+
+### Gmail Email Variables
+- Login/Create gmail account
+- Navigate to see all settings after clicking on the settings cog.
+- Navigate to accounts and import then other google account settings.
+- Navigate to security found on the side menu and follow the two step verification instructions.
+- Navigate to security app passwords, select mail, select device.
+- Select other then write django as the title then copy app password. This will be your EMAIL_HOST_PASS.
+- Your EMAIL_HOST_USER is your gmail address.
+
+### Stripe
+- Sign up and navigate to the developers tab where you will see API Keys.
+- Copy STRIPE_PUBLIC_KEY & STRIPE_SECRET_KEY amd set Heroku Config Vars.
+
+You can test the payment functionality using default card numbers.
+- Successful payment 4242 4242 4242 4242
+- Requires authentication 4000 0025 0000 3155
+- Failed payment 400 0000 0000 9995
+
+### Cloudinary
+- Create account/sign in
+- Navigate to the dashboard and copy the environment variable
+- Add CLOUDINARY_URL to env.py
+
 ### Local Deployment
 
 To make a local copy of this project, you can clone it by typing the following in your IDE terminal:
@@ -332,5 +346,12 @@ Additionally, Heroku will require a `Procfile`, so you can type:
 - [W3schools](https://www.w3schools.com/)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/download/)
 - [Geeks for Geeks](https://www.geeksforgeeks.org/)
+- [Code Institute](https://codeinstitute.net/)
 
 A lot of inspiration has derived from the Code Institute Boutique Ado walkthrough project. It has helped me by in creating a guide for me to follow and adapt. Many thanks to my teachers for creating such a well structured guide and my mentor for help and support.
+
+## Acknowledgements
+
+Firstly I would like to take the opportunity to thank Tim Nelon my mentor for his feedback, advice, time and support. He has helped me come a long way.
+
+Second I would like to thank all Code Institute Tutors, Student Care and Slack for giving me access to all the knowledge needed.
