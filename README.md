@@ -1,13 +1,13 @@
 # Myrag
 
 ## Introduction
-Myrag is a custom headwrap/durag website. The name plays on the item of focus - durag, and aims to help the end user feel a personal connection to the item.
+Myrag is a online store specialising in selling a range of colourful durags. The name plays on the item of focus - durag, and aims to help the end user feel a personal connection to the item.
 
 ### Site Owner Goal
 Make a profit through the sale of headwraps using this website and to build a community of users.
 
 ### External User Goal
-Find out more information about these custom headwraps and make an informed purchase.
+Find out more information about these custom headwraps and make an informed secure purchase.
 
 ### User Stories
 
@@ -73,7 +73,7 @@ Find out more information about these custom headwraps and make an informed purc
 #### Customer Reviews
 
 ![Mobile View](documentation/wireframes/see-reviews.png)
-![Mobile View](documentation/wireframes/write-reviews.png)
+![Mobile View](documentation/wireframes/write-review.png)
  
 #### Order List
 
@@ -175,8 +175,8 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 #### Product Selection
 ![Product Selection](documentation/features/shop-durag.png) 
 
-<!-- #### Product Details
-![Product D](documentation/features/)  -->
+#### Product Details
+![Product Details](documentation/features/durag-details)
 
 ### Add Multiple Durags to basket
 ![Add to Basket](documentation/features/add-multiple-durags.png)
@@ -191,14 +191,6 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 
 #### Product Delete
 ![Product Delete](documentation/features/manage-durag-crud.png) 
-
-<!-- ### Review
-
-#### Show Review
-![Booking Page](documentation/features/) 
-
-#### Add Review
-![Booking Page](documentation/features/)  -->
 
 
 ### Basket
@@ -257,14 +249,34 @@ To view all testing documentation please refer to [TESTING.md](TESTING.md)
 
 ## Deployment
 
-### Gmail
+### Gmail Email Variables
+- Login/Create gmail account
+- Navigate to see all settings after clicking on the settings cog.
+- Navigate to accounts and import then other google account settings.
+- Navigate to security found on the side menu and follow the two step verification instructions.
+- Navigate to security app passwords, select mail, select device.
+- Select other then write django as the title then copy app password. This will be your EMAIL_HOST_PASS.
+- Your EMAIL_HOST_USER is your gmail address.
 
 ### Environ Variables
 <!-- Create env.py
 list variables -->
+- Create env.py file.
+- Set up these Variables
+    - DATABASE_URL (Obtained from heroku)
+    - CLOUDINARY_URL (Obtained from cloudinary dashboard once signed up)
+    - SECRET_KEY (This is a key made by yourself)
+    - DEVELOPMENT
+    - SECRET_KEY
+    - STRIPE_PUBLIC_KEY
+    - STRIPE_SECRET_KEY
+
+### Stripe Keys
+- Sign up and navigate to the developers tab where you will see API Keys.
+- Copy STRIPE_PUBLIC_KEY & STRIPE_SECRET_KEY
+
 ### Cloudinary
 
-### Stripe 
 
 ### Heroku
 The site was deployed using [Heroku](https://heroku.com/). The app can be found using this link - [Myrag](https://myrag.herokuapp.com/).
@@ -301,13 +313,24 @@ Additionally, Heroku will require a `Procfile`, so you can type:
 - `echo web: node index.js > Procfile`
 
 ## Credits
-https://images.unsplash.com/photo-1588704428799-7e0aa46c45cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGR1cmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60
 
-https://images.unsplash.com/photo-1521129334744-e49785eaf335?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60
-links - inspiration - 
+### Durag Images
 
-## Acknowledgements
+- [Dragon](https://images.unsplash.com/photo-1588704428799-7e0aa46c45cb?ixlib=rb-4.0.3&[label](https://unsplash.com/photos/_bzkoVmkf7E)ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGR1cmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)
+- [Purple](https://images.unsplash.com/photo-1521129334744-e49785eaf335?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60)
+- [Black](https://images.pexels.com/photos/8475095/pexels-photo-8475095.jpeg?auto=compress&cs=tinysrgb&w=400)
+- [Bandana](https://unsplash.com/photos/_bzkoVmkf7E)
+- [Blue](https://www.pexels.com/photo/a-man-looking-at-his-phone-while-sitting-on-a-sofa-7327099/)
+- [Red](https://www.pexels.com/photo/man-holding-cigarette-13245646/)
+- [White](https://images.pexels.com/photos/13008268/pexels-photo-13008268.jpeg?auto=compress&cs=tinysrgb&w=600)
+- [Yellow](https://images.pexels.com/photos/7562692/pexels-photo-7562692.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load)
 
-- Thank you to my mentor for help and support.
+### Learning Resources
 
+- [Django Documentation](https://docs.djangoproject.com/en/4.1/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [W3schools](https://www.w3schools.com/)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/download/)
+- [Geeks for Geeks](https://www.geeksforgeeks.org/)
 
+A lot of inspiration has derived from the Code Institute Boutique Ado walkthrough project. It has helped me by in creating a guide for me to follow and adapt. Many thanks to my teachers for creating such a well structured guide and my mentor for help and support.
