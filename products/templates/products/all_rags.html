@@ -35,13 +35,16 @@ store
   </div>
   {% endif %}
   <div class="row d-flex justify-content-center durag-display-main">
+    <!-- Display list of products -->
     {% for product in products %}
     <div class="card products-main-card m-1" style="width: 12rem;">
+      <!-- if user is an admin show admin options -->
       {% if request.user.is_superuser %}
       <a href="{% url 'delete_product' product.id %}" class="text-danger large" aria-label="delete product"><i
           class="far fa-trash-alt"></i></a>
       {% endif %}
       <div class="embed-responsive embed-responsive-1by1">
+        <!-- display replacement image if theres no image url -->
         {% if 'placeholder' not in product.featured_image.url %}
         <a href="{% url 'rag_details' product.id %}">
           <img src="{{ product.featured_image.url }}" class="card-img-top embed-responsive-item"

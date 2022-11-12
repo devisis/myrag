@@ -16,7 +16,7 @@
     }
 
     // up quantity
-    $('.up-qty').click(function(e) {
+    $('.up-qty').click(function (e) {
         e.preventDefault();
         var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         var currentValue = parseInt($(closestInput).val());
@@ -26,7 +26,7 @@
     });
 
     // down quantity
-    $('.down-qty').click(function(e) {
+    $('.down-qty').click(function (e) {
         e.preventDefault();
         var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         var currentValue = parseInt($(closestInput).val());

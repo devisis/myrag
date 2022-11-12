@@ -14,7 +14,8 @@ edit durag
     </div>
     <div class="row">
         <div class="col-4 mx-auto">
-            <form method="POST" action="{% url 'edit_product' product.id %}" class="edit-product-form" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="edit-product-form"
+                enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <br>

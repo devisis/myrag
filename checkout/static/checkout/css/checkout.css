@@ -12,8 +12,7 @@
 }
 
 .StripeElement--focus,
-.stripe-style-input:active 
-.stripe-style-input:focus {
+.stripe-style-input:active .stripe-style-input:focus {
     box-shadow: 0 1px 3px 0 #d7dfe8;
 }
 
@@ -31,8 +30,8 @@
     right: .4rem;
 }
 
-#card-details, #payment-form .form-control
- {
+#card-details,
+#payment-form .form-control {
     color: #000;
     border: 2px solid #000;
 }

@@ -1,25 +1,24 @@
-<form class="form update-form d-flex justify-content-center" action="{% url 'update_basket' durag_info.durag_id %}" method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-      <div class="input-group input-group-{{ durag_info.durag_id }}">
-        <div class="input-group-prepend">
-          <!-- lower the quantity -->
-          <button class="down-qty btn" data-durag_id="{{ durag_info.durag_id }}"
-            id="down-qty_{{ durag_info.durag_id }}">
-            <span><i class="fas fa-minus fa-sm" style="color: white;"></i></span>
-          </button>
-          <!-- display quantity  -->
-          <input class="form-control form-control-sm qty_input" type="number" name="quantity"
-            value="{{ durag_info.quantity }}" min="1" max="99" data-durag_id="{{ durag_info.durag_id }}"
-            id="id_qty_{{ durag_info.durag_id }}">
-          <!-- raise quantity -->
-          <button class="up-qty btn" data-durag_id="{{ durag_info.durag_id }}"
-            id="up-qty_{{ durag_info.durag_id }}">
-            <span><i class="fas fa-plus fa-sm" style="color: white;"></i></span>
-          </button>
-        </div>
+<form class="form update-form d-flex justify-content-center" action="{% url 'update_basket' durag_info.durag_id %}"
+  method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <div class="input-group input-group-{{ durag_info.durag_id }}">
+      <div class="input-group-prepend">
+        <!-- lower the quantity -->
+        <button class="down-qty btn" data-durag_id="{{ durag_info.durag_id }}" id="down-qty_{{ durag_info.durag_id }}">
+          <span><i class="fas fa-minus fa-sm" style="color: white;"></i></span>
+        </button>
+        <!-- display quantity  -->
+        <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+          value="{{ durag_info.quantity }}" min="1" max="99" data-durag_id="{{ durag_info.durag_id }}"
+          id="id_qty_{{ durag_info.durag_id }}">
+        <!-- raise quantity -->
+        <button class="up-qty btn" data-durag_id="{{ durag_info.durag_id }}" id="up-qty_{{ durag_info.durag_id }}">
+          <span><i class="fas fa-plus fa-sm" style="color: white;"></i></span>
+        </button>
       </div>
     </div>
-  </form>
-  <a class="update-basket bsk-link float-left text-success">Update</a>
-  <a class="delete-basket bsk-link float-right text-danger" id="delete_{{ durag_info.durag_id }}">Remove</a>
+  </div>
+</form>
+<a class="update-basket bsk-link float-left text-success">Update</a>
+<a class="delete-basket bsk-link float-right text-danger" id="delete_{{ durag_info.durag_id }}">Remove</a>
