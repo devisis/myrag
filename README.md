@@ -176,7 +176,7 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 ![Product Selection](documentation/features/shop-durag.png) 
 
 #### Product Details
-![Product Details](documentation/features/durag-details)
+![Product Details](documentation/features/durag-details.png)
 
 ### Add Multiple Durags to basket
 ![Add to Basket](documentation/features/add-multiple-durags.png)
@@ -223,6 +223,13 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 ![Order History](documentation/features/order-history.png)
 
 ### Future Features
+
+- Have a pending orders tab in the front end.
+- Have testimonials on the homepage.
+- Impliment reviews and product rating.
+- Make filters for durag features.
+- Allow custom message for durag.
+- Allow durag customisation through colors/style/material.
 
 ## Technologies Used
 

@@ -10,30 +10,67 @@ To return to readme documentation please click here [README.md](README.md)
 #### View & Navigation
 
 ##### Owner
-- As an owner I so that I can
+- As an owner I can upload pictures of durags so that I can show off my product.
+![Create Durag](documentation/testing/manual/create-durag.png)
+![See Gallery](documentation/features/browse-selection.gif)
+
+
+- As an owner I can see pending orders so that I can deliver to the right address.
+![Pending Orders](documentation/testing/manual/pending-orders.png)
+
+##### Admin
+- As an admin I can access the backend through login so that I can access data securely.
+![Backend](documentation/testing/manual/backend.png)
+
 ##### User
-- As an user I so that I can
+- As a user I can see the gallery I so that I know what designs are on offer.
+![See Gallery](documentation/features/browse-selection.gif)
+
+- As a user I can see contact information I so that have ways to contact the owner for information.
+![Contact Information](documentation/features/footer.png)
+
+- As a user I can see my order history so that I can view my past orders.
+![Order History](documentation/features/order-history.png)
+
+- As a user I can see delivery information so that I see its being delivered to the right place.
+
+![Delivery Information](documentation/features/checkout-confirmation.gif)
+
+- As a user I can enter payment information so that I can make a purchase.
+![Enter Payment Information](documentation/features/checkout-form.gif)
+
 
 #### Registration & User Accounts
 
-##### Owner
-- As an owner I so that I can
-##### User
-- As an user I so that I can
+##### Admin
+- As an owner I can create and delete users so that I can perform data maintenance.
+![Create Delete Users](documentation/testing/manual/update-users.png)
 
-#### Customisation
+- As an owner I can update user records  so that I can perform data maintenance.
+![Update Users](documentation/testing/manual/update-users.png)
 
-##### Owner
-- As an owner I so that I can
 ##### User
-- As an user I so that I can
+- As a user I can register an account so that I can sign up to myrag.
+![Register Account](documentation/features/registration.png)
+
+- As a user I can create a profile so that I can save my information. 
+![Create Profile](documentation/features/default-delivery-information.png)
+
+- As a user I can update profile so that I can make changes to saved information.
+![Update Profile](documentation/features/default-delivery-information.png)
+
+- As a user I can sign in and out so that I can securely acces saved information.
+![Sign In](documentation/features/login.png)
+![Sign Out](documentation/features/sign-out.png)
 
 #### Purchasing & Checkout
 
-##### Owner
-- As an owner I so that I can
 ##### User
-- As an user I so that I can
+- As a user I can save delivery information so that I can fast track checkout.
+![Save Delivery Information](documentation/features/checkout-confirmation.gif)
+
+- As a user I can see order confirmation
+![See Order Confirmation](documentation/features/checkout-confirmation.gif)
 
 
 
@@ -208,3 +245,4 @@ I used the Lighthouse automated tool from Developer Tools to perform site qualit
 
 ### Unfixed Bug
 
+- The toast pops up on pages it perhaps should not.
