@@ -59,7 +59,7 @@ To return to readme documentation please click here [README.md](README.md)
 - As a user I can update profile so that I can make changes to saved information.
 ![Update Profile](documentation/features/default-delivery-information.png)
 
-- As a user I can sign in and out so that I can securely acces saved information.
+- As a user I can sign in and out so that I can securely access saved information.
 ![Sign In](documentation/features/login.png)
 ![Sign Out](documentation/features/sign-out.png)
 
@@ -109,7 +109,7 @@ I checked all my templates for html errors using [Nu Html Checker](https://valid
 ![checkout](documentation/testing/html/checkout.png)
 
 #### Checkout Success
-![chekout success](documentation/testing/html/checkout-success.png)
+![checkout success](documentation/testing/html/checkout-success.png)
 
 #### Profile
 ![profile](documentation/testing/html/profile.png)
@@ -149,7 +149,7 @@ I copied and pasted my css into the input section and checked my css. Everything
 
 [PEP8](http://pep8online.com/)
 
-My code was copied and pasted into the pep8 checker to see if all of my code was pep8 complient. I had a few files which exceeded the length required but it was a quick fix. I also used the problems tab in the gitpod ide.
+My code was copied and pasted into the pep8 checker to see if all of my code was pep8 compliant. I had a few files which exceeded the length required but it was a quick fix. I also used the problems tab in the gitpod ide.
 
 
 ## Browser Compatibility
@@ -170,15 +170,15 @@ I have navigated through the site using three main internet browsers, chrome, fi
 
 ## Browser Responsiveness
 
-I used chrome developer settings to test the responsiveness of the site on 3 devices with varying sizes. Iphone 5, the Iphone 12 Pro and the Ipad Air.
+I used chrome developer settings to test the responsiveness of the site on 3 devices with varying sizes. iPhone 5, the iPhone 12 Pro and the Ipad Air.
 
-### Iphone 5SE
+### iPhone 5SE
 
-![Iphone 5SE](documentation/testing/browser/iphone-5se.png)
+![iPhone 5SE](documentation/testing/browser/iPhone-5se.png)
 
-### Iphone 12
+### iPhone 12
 
-![Iphone 12](documentation/testing/browser/iphone-12pro.png)
+![iPhone 12](documentation/testing/browser/iPhone-12pro.png)
 
 ### Ipad Air
 
@@ -219,7 +219,7 @@ I used the Lighthouse automated tool from Developer Tools to perform site qualit
 ![checkout](documentation/testing/lighthouse/checkout.png)
 
 #### Checkout Success
-![chekout success](documentation/testing/lighthouse/checkout-success.png)
+![checkout success](documentation/testing/lighthouse/checkout-success.png)
 
 #### Profile
 ![profile](documentation/testing/lighthouse/profile.png)
