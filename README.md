@@ -4,10 +4,10 @@
 Myrag is a online store specialising in selling a range of colourful durags. The name plays on the item of focus - durag, and aims to help the end user feel a personal connection to the item.
 
 ### Site Owner Goal
-Make a profit through the sale of headwraps using this website and to build a community of users.
+Make a profit through the sale of durags using this website and to build a community of users.
 
 ### External User Goal
-Find out more information about these custom headwraps and make an informed secure purchase.
+Find out more information about these custom durags and make an informed secure purchase.
 
 ### User Stories
 
@@ -91,8 +91,8 @@ Find out more information about these custom headwraps and make an informed secu
 
 ### Methodology - Agile
 
-I decided to take an agile approach for the construction of my site. I made use of the projects section on GitHub, to impliments a MoSCoW prioritization technique.
-I molded a user story template and used this to create, and organise my user stories into 3 seperate lists. Lists which defined where each user story was, in terms of progress.
+I decided to take an agile approach for the construction of my site. I made use of the projects section on GitHub, to implements a MoSCoW prioritization technique.
+I moulded a user story template and used this to create, and organise my user stories into 3 separate lists. Lists which defined where each user story was, in terms of progress.
 To-do, in progress and done, all adequately named for the goal at hand.
 
 ![Projects Board](documentation/wireframes/projects-board.png)
@@ -201,8 +201,8 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 #### Remove From Basket
 ![Remove Basket](documentation/features/shopping-basket-delete.gif)
 
-#### Update Basket Qauntity
-![Basket Qauntity](documentation/features/shopping-basket-update.gif)
+#### Update Basket quantity
+![Basket quantity](documentation/features/shopping-basket-update.gif)
 
 
 ### Checkout
@@ -217,7 +217,7 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 ### Profile
 
 #### Default Delivery Information
-![Defaul Delivery Information](documentation/features/default-delivery-information.png)
+![Default Delivery Information](documentation/features/default-delivery-information.png)
 
 #### Order History
 ![Order History](documentation/features/order-history.png)
@@ -226,7 +226,7 @@ I went on google fonts and browsed through a selection of fonts. I used a variet
 
 - Have a pending orders tab in the front end.
 - Have testimonials on the homepage.
-- Impliment reviews and product rating.
+- implement reviews and product rating.
 - Make filters for durag features.
 - Allow custom message for durag.
 - Allow durag customisation through colors/style/material.
@@ -302,7 +302,7 @@ This file will contain all your keys and database settings.
 
 ### Stripe
 - Sign up and navigate to the developers tab where you will see API Keys.
-- Copy STRIPE_PUBLIC_KEY & STRIPE_SECRET_KEY amd set Heroku Config Vars.
+- Copy STRIPE_PUBLIC_KEY & STRIPE_SECRET_KEY and set Heroku Config Vars.
 
 You can test the payment functionality using default card numbers.
 - Successful payment 4242 4242 4242 4242
@@ -359,6 +359,6 @@ A lot of inspiration has derived from the Code Institute Boutique Ado walkthroug
 
 ## Acknowledgements
 
-Firstly I would like to take the opportunity to thank Tim Nelon my mentor for his feedback, advice, time and support. He has helped me come a long way.
+Firstly I would like to take the opportunity to thank Tim Nelson my mentor for his feedback, advice, time and support. He has helped me come a long way.
 
 Second I would like to thank all Code Institute Tutors, Student Care and Slack for giving me access to all the knowledge needed.
