@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import error_handler_404
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,4 +16,4 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-error_handler_404 = 'myrag.views.error_handler_404'
+handler404 = TemplateView.as_view(template_name='errors/404.html')
